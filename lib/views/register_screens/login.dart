@@ -65,12 +65,16 @@ class Login extends StatelessWidget {
                           ),
                           Column(
                             children: [
+                              SizedBox(
+                                height: 20,
+                              ),
                               InkWell(
                                 onTap: () {},
                                 child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 25.0, right: 25),
                                   child: Container(
-                                    height: 60,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: AppColors.primaryColor,
                                       borderRadius: BorderRadius.circular(100),
@@ -79,6 +83,10 @@ class Login extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
+                                        NumberContainer("1"),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
                                         AppText(
                                           text: "Log in",
                                           color: Colors.white,
@@ -89,12 +97,16 @@ class Login extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                              SizedBox(
+                                height: 20,
+                              ),
                               InkWell(
                                 onTap: () {},
                                 child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
+                                  padding: const EdgeInsets.only(
+                                      left: 25.0, right: 25),
                                   child: Container(
-                                    height: 60,
+                                    height: 70,
                                     decoration: BoxDecoration(
                                       color: AppColors.primaryColor,
                                       borderRadius: BorderRadius.circular(100),
@@ -103,6 +115,10 @@ class Login extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
+                                        NumberContainer("2"),
+                                        SizedBox(
+                                          width: 15,
+                                        ),
                                         AppText(
                                           text: "New User",
                                           color: Colors.white,
@@ -113,10 +129,13 @@ class Login extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                              SizedBox(
+                                height: 20,
+                              ),
                               InkWell(
                                 onTap: () {},
                                 child: Container(
-                                  height: 30,
+                                  height: 40,
                                   width: 100,
                                   decoration: BoxDecoration(
                                     color: AppColors.primaryColor,
@@ -125,6 +144,10 @@ class Login extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
+                                      NumberContainer("3"),
+                                      SizedBox(
+                                        width: 15,
+                                      ),
                                       AppText(
                                         text: "Exit",
                                         color: Colors.white,
@@ -144,6 +167,25 @@ class Login extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget NumberContainer(String num) {
+    return Container(
+      height: 25,
+      width: 25,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: Center(
+        child: AppText(
+          text: num,
+          color: AppColors.primaryColor,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
         ),
       ),
     );
