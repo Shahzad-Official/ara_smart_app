@@ -1,9 +1,11 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/app_button.dart';
 import '../../widgets/app_text.dart';
+import 'active_fingerprint.dart';
 
 class RegisterUsername extends StatelessWidget {
   RegisterUsername({Key? key}) : super(key: key);
@@ -108,7 +110,9 @@ class RegisterUsername extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(ActiveFingerprint());
+                        },
                         child: CustomButton(
                             text: "Send",
                             num: "1",
