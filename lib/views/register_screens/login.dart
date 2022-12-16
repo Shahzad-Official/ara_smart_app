@@ -6,6 +6,7 @@ import '../../widgets/app_button.dart';
 import '../../widgets/app_text.dart';
 import '../../widgets/background_screen.dart';
 import 'if_exit.dart';
+import 'login_screen3.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -56,7 +57,11 @@ class Login extends StatelessWidget {
                           height: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(
+                              LoginScreen3(),
+                            );
+                          },
                           child: Padding(
                             padding:
                                 const EdgeInsets.only(left: 25.0, right: 25),
