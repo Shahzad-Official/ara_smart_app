@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/app_colors.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/app_text.dart';
 import '../../widgets/background_screen.dart';
+import 'if_exit.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -90,7 +92,9 @@ class Login extends StatelessWidget {
                           height: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(ExitScreen());
+                          },
                           child: CustomButton(
                             text: "Exit",
                             num: "3",
