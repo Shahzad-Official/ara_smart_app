@@ -7,6 +7,7 @@ import '../../widgets/app_text.dart';
 import '../../widgets/background_screen.dart';
 import 'if_exit.dart';
 import 'login_screen3.dart';
+import 'new_user_registration.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -24,9 +25,9 @@ class Login extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
-                      children: [
+                      children: const [
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, right: 10),
+                          padding: EdgeInsets.only(left: 10.0, right: 10),
                           child: AppText(
                             text: "Welcome",
                             fontWeight: FontWeight.w500,
@@ -36,13 +37,13 @@ class Login extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, right: 10),
+                          padding: EdgeInsets.only(left: 10.0, right: 10),
                           child: AppText(
                             text: ":Do you want",
                             fontWeight: FontWeight.w500,
@@ -53,13 +54,13 @@ class Login extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
                           onTap: () {
                             Get.to(
-                              LoginScreen3(),
+                              const LoginScreen3(),
                             );
                           },
                           child: Padding(
@@ -75,11 +76,13 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(const NewUserRegistration());
+                          },
                           child: Padding(
                             padding:
                                 const EdgeInsets.only(left: 25.0, right: 25),
@@ -93,12 +96,12 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
                           onTap: () {
-                            Get.to(ExitScreen());
+                            Get.to(const ExitScreen());
                           },
                           child: CustomButton(
                             text: "Exit",

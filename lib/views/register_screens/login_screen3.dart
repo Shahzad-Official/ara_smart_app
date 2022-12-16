@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'login_with_data_entry.dart';
+import 'login_with_fingerprint.dart';
 
 class LoginScreen3 extends StatelessWidget {
   const LoginScreen3({Key? key}) : super(key: key);
@@ -79,7 +80,11 @@ class LoginScreen3 extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(
+                        LoginWithFingreprint(),
+                      );
+                    },
                     child: CustomButton(
                       text: "Fingerprint",
                       num: "2",
