@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/register_screens/registration_otp.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class NewUserRegistration extends StatelessWidget {
   const NewUserRegistration({Key? key}) : super(key: key);
@@ -96,7 +98,9 @@ class NewUserRegistration extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(RegistrationOtp());
+                    },
                     child: CustomButton(
                         text: "Continue",
                         num: "1",
