@@ -21,7 +21,7 @@ class LoginWithData extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
-                children: [
+                children: const [
                   AppText(
                     text: "Welcome",
                     fontSize: 25,
@@ -30,11 +30,11 @@ class LoginWithData extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Row(
-                children: [
+                children: const [
                   AppText(
                     text: ":Log in",
                     fontSize: 25,
@@ -43,11 +43,11 @@ class LoginWithData extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
-                children: [
+                children: const [
                   AppText(
                     text: ":Do you want to login with",
                     fontSize: 18,
@@ -56,37 +56,37 @@ class LoginWithData extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              AppText(
+              const AppText(
                 text:
                     "(Please enter characters from left to right, no more than 30 letters*)",
                 fontSize: 8,
                 color: Colors.red,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
                 controller: UserNameController,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              AppText(
+              const AppText(
                 text:
                     "(Please enter numbers from left to right, no more than 20 numbers*)",
                 fontSize: 8,
                 color: Colors.red,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
                 controller: PasswordController,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               InkWell(
@@ -100,7 +100,7 @@ class LoginWithData extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.35,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
