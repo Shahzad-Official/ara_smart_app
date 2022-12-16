@@ -132,7 +132,7 @@ class NewUserRegistration extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.30),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
