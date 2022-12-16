@@ -45,6 +45,10 @@ dependencies:
   flutter_svg: ^1.1.6
   #font_Style
   google_fonts: ^3.0.1
+  #voice_commands
+  speech_to_text: ^6.1.1
+  #permissions
+  permission_handler: any
 
 dev_dependencies:
   flutter_test:
