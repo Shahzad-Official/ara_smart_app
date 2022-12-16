@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../constants/app_colors.dart';
+import 'app_text.dart';
+
+class CustomButton extends StatelessWidget {
+  String text, num;
+  double height;
+  double width;
+  final double? fontSize;
+  final Color? color;
+  final FontWeight? fontWeight;
+  CustomButton(
+      {Key? key,
+      required this.text,
+      required this.num,
+      required this.height,
+      required this.width,
+      this.color,
+      this.fontSize,
+      this.fontWeight})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        color: AppColors.primaryColor,
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 25,
+            width: 25,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: Center(
+              child: AppText(
+                text: num,
+                color: AppColors.primaryColor,
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Text(
+            text,
+            style: GoogleFonts.notoSerif(
+              fontSize: fontSize,
+              fontWeight: fontWeight,
+              color: color,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
