@@ -3,6 +3,9 @@ import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'login_with_data_entry.dart';
 
 class LoginScreen3 extends StatelessWidget {
   const LoginScreen3({Key? key}) : super(key: key);
@@ -59,7 +62,9 @@ class LoginScreen3 extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(LoginWithData());
+                    },
                     child: CustomButton(
                       text: "Data Entry",
                       num: "1",
@@ -86,7 +91,7 @@ class LoginScreen3 extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   Row(
                     children: [
@@ -99,7 +104,7 @@ class LoginScreen3 extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
