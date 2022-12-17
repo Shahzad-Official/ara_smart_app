@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/account_remarks.dart';
 import 'package:ara_smart_app/views/otp/beneficiary_otp.dart';
 import 'package:ara_smart_app/views/otp/enter_password_otp.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: AppColors().customMaterialColor(),
       ),
-      home: const Enter_password_otp(),
+      home: const SplashScreen(),
     );
   }
 }
