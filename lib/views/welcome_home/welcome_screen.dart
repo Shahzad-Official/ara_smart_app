@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/knowing_balance/knowing_balance.dart';
 import 'package:ara_smart_app/views/pay_biils/pay_bills.dart';
 import 'package:ara_smart_app/views/register_screens/if_exit.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
@@ -46,7 +47,11 @@ class WelcomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      // Get.to(
+                      //   () => KnowingBalance(),
+                      // );
+                    },
                     child: CustomButton(
                         text: "Knowing the\nbank balance",
                         num: "1",
