@@ -1,5 +1,6 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
-import 'package:ara_smart_app/views/pay_biils/otp_pay_bills.dart';
+import 'package:ara_smart_app/views/pay_biils/account_pay_bill.dart';
+import 'package:ara_smart_app/views/pay_biils/reamrks_bill.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: AppColors().customMaterialColor(),
       ),
-      home: const Otp_pay_bills(),
+      home: const Remarks_bill(),
     );
   }
 }
