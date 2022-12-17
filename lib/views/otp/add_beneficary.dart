@@ -43,7 +43,7 @@ class Add_Beneficiary extends StatelessWidget {
                   ),
                   const AppText(
                     text:
-                        "(Please enter characters from left to right no more than 30\n letters)",
+                        "(*Please enter characters from left to right no more than 30\n letters)",
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
                     color: Colors.red,
