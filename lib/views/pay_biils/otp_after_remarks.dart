@@ -8,7 +8,13 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class Otp_after_remarks extends StatelessWidget {
-  const Otp_after_remarks({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Otp_after_remarks({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +62,13 @@ class Otp_after_remarks extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const Done_successfuly_end());
+                          Get.to(
+                            Done_successfuly_end(
+                              accountNo: accountNo,
+                              balance: balance,
+                              name: name,
+                            ),
+                          );
                         },
                         child: CustomButton(
                             text: "Continue",

@@ -7,7 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Payer_summary extends StatelessWidget {
-  const Payer_summary({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Payer_summary({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +126,13 @@ class Payer_summary extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const Otp_pay_bills());
+                          Get.to(
+                            Otp_pay_bills(
+                              accountNo: accountNo,
+                              balance: balance,
+                              name: name,
+                            ),
+                          );
                         },
                         child: CustomButton(
                           text: "Continue",

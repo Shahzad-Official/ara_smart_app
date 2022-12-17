@@ -9,7 +9,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Remarks_bill extends StatelessWidget {
-  const Remarks_bill({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Remarks_bill({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +82,13 @@ class Remarks_bill extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const Otp_after_remarks());
+                          Get.to(
+                            Otp_after_remarks(
+                              accountNo: accountNo,
+                              balance: balance,
+                              name: name,
+                            ),
+                          );
                         },
                         child: CustomButton(
                           text: "Continue",

@@ -9,7 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Pay_bills extends StatelessWidget {
-  const Pay_bills({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Pay_bills({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +57,11 @@ class Pay_bills extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Add_new_biller());
+                      Get.to(Add_new_biller(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                       text: "Add a new biller",
@@ -68,7 +78,13 @@ class Pay_bills extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Manage_registered_billers());
+                      Get.to(
+                        Manage_registered_billers(
+                          accountNo: accountNo,
+                          balance: balance,
+                          name: name,
+                        ),
+                      );
                     },
                     child: CustomButton(
                       text: "Manage registered \n         billers",

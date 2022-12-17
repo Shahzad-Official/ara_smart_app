@@ -7,7 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Account_pay_bill extends StatefulWidget {
-  const Account_pay_bill({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Account_pay_bill({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   State<Account_pay_bill> createState() => _transfers_accountState();
@@ -220,7 +226,13 @@ class _transfers_accountState extends State<Account_pay_bill> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const Remarks_bill());
+                          Get.to(
+                            Remarks_bill(
+                              accountNo: widget.accountNo,
+                              balance: widget.balance,
+                              name: widget.name,
+                            ),
+                          );
                         },
                         child: CustomButton(
                           text: "Continue",
