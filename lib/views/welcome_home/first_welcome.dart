@@ -134,7 +134,7 @@ class _FirstWelcomeState extends State<FirstWelcome> {
                         InkWell(
                           onTap: () {
                             player.stop();
-                            Get.to(
+                            Get.offAll(
                               const LoginScreen(),
                             );
                           },
@@ -157,7 +157,7 @@ class _FirstWelcomeState extends State<FirstWelcome> {
                         InkWell(
                           onTap: () {
                             player.stop();
-                            Get.to(
+                            Get.offAll(
                               NewUserRegistration(),
                             );
                           },
