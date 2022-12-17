@@ -136,7 +136,7 @@ class _TransferBtweenOwnAccountState extends State<TransferBtweenOwnAccount> {
                     ],
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
