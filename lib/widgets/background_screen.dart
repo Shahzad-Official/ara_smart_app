@@ -56,7 +56,7 @@ class BackgroundScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.65,
+                  height: MediaQuery.of(context).size.height * 0.6,
                   width: MediaQuery.of(context).size.width * 0.8,
                   decoration: BoxDecoration(
                     color: Colors.white,
