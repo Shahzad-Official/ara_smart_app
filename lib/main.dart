@@ -1,6 +1,9 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/controllers/search_biller.dart';
+import 'package:ara_smart_app/models/biller_model.dart';
 
 import 'package:ara_smart_app/views/splash_screen.dart';
+import 'package:ara_smart_app/widgets/app_text.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,20 +41,20 @@ class MyApp extends StatelessWidget {
 // }
 
 // class _TestState extends State<Test> {
-//   var _usersList = [];
-//   List<UserModel> usersList = [];
+//   var _billersList = [];
+//   List<BillerModel> billersList = [];
 
 //   getDbdata() async {
-//     usersList.clear();
+//     billersList.clear();
 
-//     var box = await Hive.openBox('myBox');
-//     _usersList = box.get("users");
-//     var newData = _usersList.toList();
+//     var box = await Hive.openBox('billbox');
+//     _billersList = box.get("billers");
+//     var newData = _billersList.toList();
 
 //     for (var i in newData) {
-//       usersList.add(UserModel.fromJson(i));
+//       billersList.add(BillerModel.fromJson(i));
 //     }
-//     print(usersList.length);
+//     print(billersList.length);
 //   }
 
 //   @override
@@ -62,8 +65,8 @@ class MyApp extends StatelessWidget {
 //           padding: const EdgeInsets.all(18.0),
 //           child: Column(
 //             children: [
-//               GetBuilder<SignUpController>(
-//                 init: SignUpController(),
+//               GetBuilder<SearchBiller>(
+//                 init: SearchBiller(),
 //                 initState: (_) {},
 //                 builder: (_) {
 //                   return Column(
@@ -73,31 +76,26 @@ class MyApp extends StatelessWidget {
 //                           future: getDbdata(),
 //                           builder: (context, snapshot) {
 //                             return AppText(
-//                               text: _.listOfUsers.toString(),
+//                               text: _billersList.toString(),
 //                               fontWeight: FontWeight.w500,
 //                             );
 //                           }),
 //                       ElevatedButton(
-//                         onPressed: () async {
-//                           _.createNewUser();
-//                         },
+//                         onPressed: () async {},
 //                         child: AppText(text: "add User"),
 //                       ),
 //                     ],
 //                   );
 //                 },
 //               ),
-//               GetBuilder<LoginController>(
-//                 init: LoginController(),
+//               GetBuilder<SearchBiller>(
+//                 init: SearchBiller(),
 //                 initState: (_) {},
 //                 builder: (_) {
 //                   return Column(
 //                     children: [
 //                       TextFormField(
-//                         controller: _.userId,
-//                       ),
-//                       TextFormField(
-//                         controller: _.password,
+//                         controller: _.name,
 //                       ),
 //                       ElevatedButton(
 //                         onPressed: () async {

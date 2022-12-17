@@ -14,25 +14,26 @@ class BillerController extends GetxController {
   UserData userData = UserData();
   BillerModel userModel = BillerModel();
   createNewUser() async {
-    userModel = BillerModel(
-      balance: int.parse(balance.text.trim()),
-      cardNumber: cardNo.text.trim(),
-      name: billername.text.trim(),
-      type: type.text.trim(),
-    );
+    // userModel = BillerModel(
+    //   balance: int.parse(balance.text.trim()),
+    //   cardNumber: cardNo.text.trim(),
+    //   name: billername.text.trim(),
+    //   type: type.text.trim(),
+    // );
 
-    userData.registeredBillers.add(
-      userModel.toJson(),
-    );
+    // userData.registeredBillers.add(
+    //   userModel.toJson(),
+    // );
     update();
-    var box = await Hive.openBox('myBox');
+    var box = await Hive.openBox('billbox');
 
     box.put(
-      "users",
+      "billers",
       userData.registeredBillers,
     );
 
-    listOfUsers = box.get("users");
+    listOfUsers = box.get("billers");
+    print(listOfUsers);
 
     return listOfUsers;
   }
