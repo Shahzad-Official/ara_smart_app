@@ -15,7 +15,7 @@ class BillerController extends GetxController {
   BillerModel billerModel = BillerModel();
   createNewBiller() async {
     billerModel = BillerModel(
-      balance: int.parse(balance.text.trim()),
+      balance: 500,
       cardNumber: cardNo.text.trim(),
       name: billername.text.trim(),
       type: type.text.trim(),
