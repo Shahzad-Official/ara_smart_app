@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: AppColors().customMaterialColor(),
       ),
-      home: const Enter_password_otp(),
+      home: const SplashScreen(),
     );
   }
 }

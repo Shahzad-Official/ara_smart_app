@@ -14,17 +14,11 @@ class BillerController extends GetxController {
   UserData userData = UserData();
   BillerModel billerModel = BillerModel();
   createNewBiller() async {
-    // billerModel = BillerModel(
-    //   balance: int.parse(balance.text.trim()),
-    //   cardNumber: cardNo.text.trim(),
-    //   name: billername.text.trim(),
-    //   type: type.text.trim(),
-    // );
     billerModel = BillerModel(
-      balance: 200,
-      cardNumber: "ardNo.text.trim()",
-      name: " billername.text.trim()",
-      type: "ype.text.trim()",
+      balance: int.parse(balance.text.trim()),
+      cardNumber: cardNo.text.trim(),
+      name: billername.text.trim(),
+      type: type.text.trim(),
     );
 
     userData.registeredBillers.add(
