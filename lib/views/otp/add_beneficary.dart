@@ -26,12 +26,9 @@ class Add_Beneficiary extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Colors.red,
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
                   const AppText(
                     text: "Add Beneficiary",
-                    fontSize: 25,
+                    fontSize: 22,
                     fontWeight: FontWeight.w500,
                     color: AppColors.primaryColor,
                   ),
@@ -40,14 +37,14 @@ class Add_Beneficiary extends StatelessWidget {
                   ),
                   const AppText(
                     text: "What Nickname would you like to use?",
-                    fontSize: 18,
+                    fontSize: 17,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                   const AppText(
                     text:
                         "(Please enter characters from left to right no more than 30\n letters)",
-                    fontSize: 11,
+                    fontSize: 10,
                     fontWeight: FontWeight.w500,
                     color: Colors.red,
                   ),
@@ -56,27 +53,27 @@ class Add_Beneficiary extends StatelessWidget {
                   ),
                   const AppText(
                     text: "W  a  f  a   A  l  i",
-                    fontSize: 19,
+                    fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                   const AppText(
                     text: "What is the account number?",
-                    fontSize: 17,
+                    fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                   const AppText(
                     text:
                         "8  4  4   3   4   3   4   4   4   3   1  9     1   0   7   6   7",
-                    fontSize: 17,
+                    fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                   const AppText(
                     text:
                         "Do  you want to continue the|n process of adding the beneficiary?",
-                    fontSize: 16,
+                    fontSize: 15,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
@@ -91,7 +88,7 @@ class Add_Beneficiary extends StatelessWidget {
                             child: CustomButton(
                               text: "Yes",
                               num: "1",
-                              height: 50,
+                              height: 47,
                               fontSize: 20,
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
@@ -99,14 +96,14 @@ class Add_Beneficiary extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(
-                            height: 5,
+                            height: 8,
                           ),
                           InkWell(
                             onTap: () {},
                             child: CustomButton(
                               text: "No",
                               num: "2",
-                              height: 50,
+                              height: 47,
                               fontSize: 20,
                               color: Colors.white,
                               fontWeight: FontWeight.w500,

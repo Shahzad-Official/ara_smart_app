@@ -4,8 +4,8 @@ import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 
-class Transfer_to_Account extends StatelessWidget {
-  const Transfer_to_Account({Key? key}) : super(key: key);
+class beneficiary_successful extends StatelessWidget {
+  const beneficiary_successful({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,51 +19,31 @@ class Transfer_to_Account extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    children: const [
-                      AppText(
-                        text: "The beneficiary has been\n   added successfully",
-                        fontSize: 25,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ],
+                  const AppText(
+                    text: "The beneficiary has been\n   added successfully",
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
                   ),
+                  const Image(
+                      height: 180,
+                      width: 180,
+                      image: AssetImage("assets/greenTick.png")),
                   const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: const [
-                      AppText(
-                        text: "Do you want",
-                        fontSize: 25,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
                   InkWell(
                     onTap: () {},
                     child: CustomButton(
                       text: "OK",
                       num: "1",
-                      height: 70,
+                      height: 60,
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      width: MediaQuery.of(context).size.width * 0.5,
+                      width: MediaQuery.of(context).size.width * 0.45,
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  
-            
-              
-              
                 ],
               ),
             ),
