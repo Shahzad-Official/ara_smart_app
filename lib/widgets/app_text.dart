@@ -5,11 +5,13 @@ class AppText extends StatelessWidget {
   final String text;
   final double? fontSize;
   final Color? color;
+  final TextAlign? textAlign;
   final FontWeight? fontWeight;
   const AppText({
     Key? key,
     required this.text,
     this.color,
+    this.textAlign,
     this.fontSize,
     this.fontWeight,
   }) : super(key: key);
@@ -18,6 +20,7 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign: textAlign,
       style: GoogleFonts.poppins(
         fontSize: fontSize,
         fontWeight: fontWeight,

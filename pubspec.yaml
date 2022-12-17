@@ -49,10 +49,14 @@ dependencies:
   speech_to_text: ^6.1.1
   #permissions
   permission_handler: any
+
   avatar_glow: any
   highlight_text: any
   #audioplayer
   audioplayers: ^1.1.1
+
+  pinput: ^2.2.16
+
 
 dev_dependencies:
   flutter_test:
