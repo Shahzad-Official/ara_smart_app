@@ -4,6 +4,7 @@ import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class ExitScreen extends StatelessWidget {
   const ExitScreen({Key? key}) : super(key: key);
@@ -45,7 +46,9 @@ class ExitScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.back();
+                    },
                     child: CustomButton(
                       text: "No",
                       num: "2",

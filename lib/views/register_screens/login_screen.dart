@@ -1,5 +1,7 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/controllers/login_controller.dart';
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
+import 'package:ara_smart_app/views/welcome_home/first_welcome.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -122,7 +124,9 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.offAll(() => FirstWelcome());
+                        },
                         child: CustomButton(
                           text: "Back",
                           num: "3",
@@ -137,7 +141,9 @@ class LoginScreen extends StatelessWidget {
                         width: 10,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => ExitScreen());
+                        },
                         child: CustomButton(
                           text: "Exit",
                           num: "4",

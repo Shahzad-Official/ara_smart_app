@@ -1,6 +1,8 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/controllers/sign_up_controller.dart';
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
 import 'package:ara_smart_app/views/register_screens/registration_otp.dart';
+import 'package:ara_smart_app/views/welcome_home/first_welcome.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -124,7 +126,9 @@ class NewUserRegistration extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.off(() => FirstWelcome());
+                        },
                         child: CustomButton(
                             text: "Back",
                             num: "2",
@@ -134,7 +138,9 @@ class NewUserRegistration extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.30),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => ExitScreen());
+                        },
                         child: CustomButton(
                             text: "Exit",
                             num: "3",

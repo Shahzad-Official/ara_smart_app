@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
-                    children: [
+                    children: const [
                       AppText(
                         text: "Welcome",
                         fontSize: 25,
@@ -32,7 +34,7 @@ class WelcomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       AppText(
                         text: "What kind of service do you want?",
                         fontSize: 16,
@@ -88,7 +90,9 @@ class WelcomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                             text: "Back",
                             num: "4",
@@ -99,7 +103,9 @@ class WelcomeScreen extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.30),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => ExitScreen());
+                        },
                         child: CustomButton(
                             text: "Exit",
                             num: "5",
