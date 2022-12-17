@@ -36,7 +36,7 @@ class Transferrence_successful extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Pay_bills());
+                      Get.to(Pay_bills());
                     },
                     child: CustomButton(
                       text: "OK",
