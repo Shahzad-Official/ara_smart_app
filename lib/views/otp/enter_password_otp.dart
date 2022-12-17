@@ -5,8 +5,8 @@ import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-class EnterPassword extends StatelessWidget {
-  const EnterPassword({Key? key}) : super(key: key);
+class Enter_password_otp extends StatelessWidget {
+  const Enter_password_otp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
