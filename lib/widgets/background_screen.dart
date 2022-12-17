@@ -50,6 +50,7 @@ class BackgroundScreen extends StatelessWidget {
               ),
             ],
           ),
+
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
