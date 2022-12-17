@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/transfers_account.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -50,7 +51,9 @@ class Search_account extends StatelessWidget {
                     height: 35,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Transfers_account());
+                    },
                     child: CustomButton(
                       text: "Tahani",
                       num: "1",
@@ -65,7 +68,9 @@ class Search_account extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Transfers_account());
+                    },
                     child: CustomButton(
                       text: "Masheal",
                       num: "2",
@@ -80,7 +85,9 @@ class Search_account extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Transfers_account());
+                    },
                     child: CustomButton(
                       text: "Wafa",
                       num: "3",

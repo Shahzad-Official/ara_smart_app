@@ -38,7 +38,9 @@ class SuccessfullyRegister extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.to(WelcomeScreen());
+                    Get.to(
+                      WelcomeScreen(),
+                    );
                   },
                   child: CustomButton(
                     text: "Ok",

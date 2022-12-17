@@ -1,11 +1,12 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/controllers/login_controller.dart';
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../widgets/app_text.dart';
-import '../welcome_home/welcome_screen.dart';
 
 class LoginWithFingreprint extends StatelessWidget {
   const LoginWithFingreprint({Key? key}) : super(key: key);
@@ -56,17 +57,24 @@ class LoginWithFingreprint extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                InkWell(
-                  onTap: () {
-                    Get.to(WelcomeScreen());
+                GetBuilder<LoginController>(
+                  init: LoginController(),
+                  builder: (_) {
+                    return InkWell(
+                      onTap: () async {
+                        _.userId.text = "shahzad1234";
+                        _.password.text = "shahzad12@";
+                        await _.isValidUser();
+                      },
+                      child: CustomButton(
+                          text: "Login",
+                          num: "1",
+                          height: 40,
+                          fontSize: 20,
+                          color: Colors.white,
+                          width: MediaQuery.of(context).size.width * 0.35),
+                    );
                   },
-                  child: CustomButton(
-                      text: "Login",
-                      num: "1",
-                      height: 40,
-                      fontSize: 20,
-                      color: Colors.white,
-                      width: MediaQuery.of(context).size.width * 0.35),
                 ),
                 const SizedBox(
                   height: 30,
@@ -75,7 +83,9 @@ class LoginWithFingreprint extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.back();
+                      },
                       child: CustomButton(
                           text: "Back",
                           num: "2",
@@ -85,7 +95,9 @@ class LoginWithFingreprint extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.30),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => ExitScreen());
+                      },
                       child: CustomButton(
                           text: "Exit",
                           num: "3",

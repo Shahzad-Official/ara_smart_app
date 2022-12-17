@@ -5,6 +5,8 @@ import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'account_pay_bill.dart';
+
 class Manage_registered_billers extends StatelessWidget {
   const Manage_registered_billers({Key? key}) : super(key: key);
 
@@ -54,7 +56,9 @@ class Manage_registered_billers extends StatelessWidget {
                     height: 35,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Account_pay_bill());
+                    },
                     child: CustomButton(
                       text: "MEDC Electricity",
                       num: "1",
@@ -69,7 +73,9 @@ class Manage_registered_billers extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Account_pay_bill());
+                    },
                     child: CustomButton(
                       text: "Oneic Water",
                       num: "2",
@@ -87,7 +93,9 @@ class Manage_registered_billers extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const Account_pay_bill());
+                        },
                         child: CustomButton(
                           text: "Continue",
                           num: "3",

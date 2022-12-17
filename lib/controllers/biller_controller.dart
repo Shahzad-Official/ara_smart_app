@@ -12,27 +12,34 @@ class BillerController extends GetxController {
   TextEditingController balance = TextEditingController();
   List<Map<String, dynamic>> listOfUsers = [{}];
   UserData userData = UserData();
-  BillerModel userModel = BillerModel();
-  createNewUser() async {
-    userModel = BillerModel(
-      balance: int.parse(balance.text.trim()),
-      cardNumber: cardNo.text.trim(),
-      name: billername.text.trim(),
-      type: type.text.trim(),
+  BillerModel billerModel = BillerModel();
+  createNewBiller() async {
+    // billerModel = BillerModel(
+    //   balance: int.parse(balance.text.trim()),
+    //   cardNumber: cardNo.text.trim(),
+    //   name: billername.text.trim(),
+    //   type: type.text.trim(),
+    // );
+    billerModel = BillerModel(
+      balance: 200,
+      cardNumber: "ardNo.text.trim()",
+      name: " billername.text.trim()",
+      type: "ype.text.trim()",
     );
 
     userData.registeredBillers.add(
-      userModel.toJson(),
+      billerModel.toJson(),
     );
     update();
-    var box = await Hive.openBox('myBox');
+    var box = await Hive.openBox('billbox');
 
     box.put(
-      "users",
+      "billers",
       userData.registeredBillers,
     );
 
-    listOfUsers = box.get("users");
+    listOfUsers = box.get("billers");
+    print(listOfUsers);
 
     return listOfUsers;
   }

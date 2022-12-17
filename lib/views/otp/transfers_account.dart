@@ -5,6 +5,8 @@ import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'account_remarks.dart';
+
 class Transfers_account extends StatefulWidget {
   const Transfers_account({Key? key}) : super(key: key);
 
@@ -82,7 +84,7 @@ class _transfers_accountState extends State<Transfers_account> {
                         color: Colors.black,
                       ),
                       AppText(
-                        text: "wafa",
+                        text: "Wafa",
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
@@ -169,7 +171,9 @@ class _transfers_accountState extends State<Transfers_account> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const Account_remarks());
+                        },
                         child: CustomButton(
                           text: "Continue",
                           num: "1",
@@ -181,7 +185,9 @@ class _transfers_accountState extends State<Transfers_account> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Cancel",
                           num: "2",

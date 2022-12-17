@@ -10,31 +10,32 @@ import '../widgets/app_text.dart';
 class SearchBiller extends GetxController {
   final UserData _userData = UserData();
   var _usersList = [];
-  List<BillerModel> currentUser = [];
-  List<BillerModel> usersList = [];
+  List<BillerModel> currentBiller = [];
+  List<BillerModel> billersList = [];
 
   TextEditingController name = TextEditingController();
   isValidUser() async {
-    usersList.clear();
+    billersList.clear();
 
-    var box = await Hive.openBox('myBox');
-    _usersList = box.get("users");
+    var box = await Hive.openBox('billbox');
+    _usersList = box.get("billers");
     var newData = _usersList.toList();
 
     for (var i in newData) {
-      usersList.add(BillerModel.fromJson(i));
+      billersList.add(BillerModel.fromJson(i));
     }
+    print(billersList);
 
-    currentUser.clear();
-    currentUser = usersList.where((element) {
+    currentBiller.clear();
+    currentBiller = billersList.where((element) {
       if (element.name == name.text.trim()) {
         return true;
       } else {
         return false;
       }
     }).toList();
-    if (currentUser.isNotEmpty) {
-      return currentUser;
+    if (currentBiller.isNotEmpty) {
+      return currentBiller;
       // Get.off(
       //   () => const RegistrationOtp(),
       // );

@@ -1,4 +1,6 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/beneficiary_otp.dart';
+import 'package:ara_smart_app/views/otp/enter_password_otp.dart';
 
 import 'package:ara_smart_app/views/splash_screen.dart';
 
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: AppColors().customMaterialColor(),
       ),
-      home: const SplashScreen(),
+      home: const Enter_password_otp(),
     );
   }
 }
@@ -38,78 +40,89 @@ class MyApp extends StatelessWidget {
 // }
 
 // class _TestState extends State<Test> {
-//   var _usersList = [];
-//   List<UserModel> usersList = [];
+//   List billersList = [];
+//   List<BillerModel> newList = [];
 
 //   getDbdata() async {
-//     usersList.clear();
+//     billersList.clear();
 
-//     var box = await Hive.openBox('myBox');
-//     _usersList = box.get("users");
-//     var newData = _usersList.toList();
+//     var box = await Hive.openBox('billbox');
+//     billersList = box.get("billers");
+//     var newData = billersList.toList();
 
-//     for (var i in newData) {
-//       usersList.add(UserModel.fromJson(i));
-//     }
-//     print(usersList.length);
+//     print(billersList.length);
+//   }
+
+//   @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     getDbdata();
 //   }
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: Padding(
-//           padding: const EdgeInsets.all(18.0),
-//           child: Column(
-//             children: [
-//               GetBuilder<SignUpController>(
-//                 init: SignUpController(),
-//                 initState: (_) {},
-//                 builder: (_) {
-//                   return Column(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-//                       FutureBuilder(
-//                           future: getDbdata(),
-//                           builder: (context, snapshot) {
-//                             return AppText(
-//                               text: _.listOfUsers.toString(),
-//                               fontWeight: FontWeight.w500,
-//                             );
-//                           }),
-//                       ElevatedButton(
-//                         onPressed: () async {
-//                           _.createNewUser();
-//                         },
-//                         child: AppText(text: "add User"),
-//                       ),
-//                     ],
-//                   );
-//                 },
-//               ),
-//               GetBuilder<LoginController>(
-//                 init: LoginController(),
-//                 initState: (_) {},
-//                 builder: (_) {
-//                   return Column(
-//                     children: [
-//                       TextFormField(
-//                         controller: _.userId,
-//                       ),
-//                       TextFormField(
-//                         controller: _.password,
-//                       ),
-//                       ElevatedButton(
-//                         onPressed: () async {
-//                           await _.isValidUser();
-//                         },
-//                         child: Text("getsUsers"),
-//                       ),
-//                     ],
-//                   );
-//                 },
-//               ),
-//             ],
+//     return SafeArea(
+//       child: Scaffold(
+//         body: Center(
+//           child: Padding(
+//             padding: const EdgeInsets.all(18.0),
+//             child: Column(
+//               children: [
+//                 GetBuilder<SearchBiller>(
+//                   init: SearchBiller(),
+//                   initState: (_) {},
+//                   builder: (_) {
+//                     return Column(
+//                       mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         FutureBuilder(
+//                             future: getDbdata(),
+//                             builder: (context, snapshot) {
+//                               return Column(
+//                                 children: [
+//                                   AppText(
+//                                     text: billersList.toString(),
+//                                     fontWeight: FontWeight.w500,
+//                                   ),
+//                                   AppText(
+//                                     text: billersList.runtimeType.toString(),
+//                                     fontWeight: FontWeight.w500,
+//                                   ),
+//                                 ],
+//                               );
+//                             }),
+//                         ElevatedButton(
+//                           onPressed: () async {
+//                             await getDbdata();
+//                           },
+//                           child: AppText(text: "add User"),
+//                         ),
+//                       ],
+//                     );
+//                   },
+//                 ),
+//                 GetBuilder<BillerController>(
+//                   init: BillerController(),
+//                   initState: (_) {},
+//                   builder: (_) {
+//                     return Column(
+//                       children: [
+//                         TextFormField(
+//                           controller: _.balance,
+//                         ),
+//                         ElevatedButton(
+//                           onPressed: () async {
+//                             await _.createNewBiller();
+//                           },
+//                           child: Text("getsUsers"),
+//                         ),
+//                       ],
+//                     );
+//                   },
+//                 ),
+//               ],
+//             ),
 //           ),
 //         ),
 //       ),

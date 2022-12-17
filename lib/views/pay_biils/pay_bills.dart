@@ -1,4 +1,6 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/pay_biils/Manage_registered_billers.dart';
+import 'package:ara_smart_app/views/pay_biils/add_new_biller.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -47,7 +49,9 @@ class Pay_bills extends StatelessWidget {
                     height: 15,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Add_new_biller());
+                    },
                     child: CustomButton(
                       text: "Add a new biller",
                       num: "1",
@@ -62,7 +66,9 @@ class Pay_bills extends StatelessWidget {
                     height: 15,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Manage_registered_billers());
+                    },
                     child: CustomButton(
                       text: "Manage registered \n         billers",
                       num: "2",
@@ -80,7 +86,9 @@ class Pay_bills extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Back",
                           num: "3",

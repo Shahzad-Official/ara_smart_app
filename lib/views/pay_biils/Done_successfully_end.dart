@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/welcome_home/welcome_screen.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Done_successfuly_end extends StatelessWidget {
   const Done_successfuly_end({Key? key}) : super(key: key);
@@ -33,7 +35,9 @@ class Done_successfuly_end extends StatelessWidget {
                     height: 30,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const WelcomeScreen());
+                    },
                     child: CustomButton(
                       text: "OK",
                       num: "1",

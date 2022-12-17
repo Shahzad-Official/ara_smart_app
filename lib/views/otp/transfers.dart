@@ -1,5 +1,6 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/views/otp/add_beneficary.dart';
+import 'package:ara_smart_app/views/otp/search_account.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -65,7 +66,9 @@ class Transfer_to_Account extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Search_account());
+                    },
                     child: CustomButton(
                       text:
                           "  There is an\n account you want\n   to transfer to",
@@ -84,7 +87,9 @@ class Transfer_to_Account extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Back",
                           num: "3",
@@ -99,7 +104,9 @@ class Transfer_to_Account extends StatelessWidget {
                         width: 10,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Exit",
                           num: "4",
