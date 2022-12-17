@@ -1,11 +1,21 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/controllers/login_controller.dart';
+import 'package:ara_smart_app/controllers/sign_up_controller.dart';
+import 'package:ara_smart_app/database/user_data.dart';
+import 'package:ara_smart_app/models/user_model.dart';
+import 'package:ara_smart_app/views/register_screens/login_with_data_entry.dart';
 import 'package:ara_smart_app/views/splash_screen.dart';
-import 'package:ara_smart_app/views/welcome_home/first_welcome.dart';
+import 'package:ara_smart_app/widgets/app_text.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var directory = await getApplicationDocumentsDirectory();
+  Hive.init(directory.path);
   runApp(const MyApp());
 }
 
@@ -20,7 +30,94 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: AppColors().customMaterialColor(),
       ),
-      home: const SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }
+
+// class Test extends StatefulWidget {
+//   const Test({Key? key}) : super(key: key);
+
+//   @override
+//   State<Test> createState() => _TestState();
+// }
+
+// class _TestState extends State<Test> {
+//   var _usersList = [];
+//   List<UserModel> usersList = [];
+
+//   getDbdata() async {
+//     usersList.clear();
+
+//     var box = await Hive.openBox('myBox');
+//     _usersList = box.get("users");
+//     var newData = _usersList.toList();
+
+//     for (var i in newData) {
+//       usersList.add(UserModel.fromJson(i));
+//     }
+//     print(usersList.length);
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Padding(
+//           padding: const EdgeInsets.all(18.0),
+//           child: Column(
+//             children: [
+//               GetBuilder<SignUpController>(
+//                 init: SignUpController(),
+//                 initState: (_) {},
+//                 builder: (_) {
+//                   return Column(
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     children: [
+//                       FutureBuilder(
+//                           future: getDbdata(),
+//                           builder: (context, snapshot) {
+//                             return AppText(
+//                               text: _.listOfUsers.toString(),
+//                               fontWeight: FontWeight.w500,
+//                             );
+//                           }),
+//                       ElevatedButton(
+//                         onPressed: () async {
+//                           _.createNewUser();
+//                         },
+//                         child: AppText(text: "add User"),
+//                       ),
+//                     ],
+//                   );
+//                 },
+//               ),
+//               GetBuilder<LoginController>(
+//                 init: LoginController(),
+//                 initState: (_) {},
+//                 builder: (_) {
+//                   return Column(
+//                     children: [
+//                       TextFormField(
+//                         controller: _.userId,
+//                       ),
+//                       TextFormField(
+//                         controller: _.password,
+//                       ),
+//                       ElevatedButton(
+//                         onPressed: () async {
+//                           await _.isValidUser();
+//                         },
+//                         child: Text("getsUsers"),
+//                       ),
+//                     ],
+//                   );
+//                 },
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

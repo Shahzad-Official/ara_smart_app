@@ -1,7 +1,11 @@
+import 'package:ara_smart_app/database/user_data.dart';
+import 'package:ara_smart_app/models/user_model.dart';
+import 'package:ara_smart_app/services/register_user_service.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 
 import '../../constants/app_colors.dart';
 import '../../controllers/login_controller.dart';
@@ -10,6 +14,8 @@ import '../../widgets/app_text.dart';
 class LoginWithData extends StatelessWidget {
   final controller = Get.put(LoginController());
   LoginWithData({Key? key}) : super(key: key);
+  UserData userData = UserData();
+  UserModel userModel = UserModel();
 
   @override
   Widget build(BuildContext context) {
@@ -107,16 +113,38 @@ class LoginWithData extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: () {},
-                    child: CustomButton(
-                      text: "Back",
-                      num: "2",
-                      height: 40,
-                      fontSize: 18,
-                      color: Colors.white,
-                      width: MediaQuery.of(context).size.width * 0.30,
-                    ),
+                  CustomButton(
+                    onTap: () async {
+                      try {
+                        userModel = UserModel(
+                          balance: 100,
+                          cardNumber: "cardNO",
+                          mobile: "mobile",
+                          password: "password",
+                          userId: "userId",
+                        );
+
+                        userData.registeredUsers.add(
+                          userModel.toJson(),
+                        );
+
+                        var box = await Hive.openBox('myBox');
+
+                        box.put(
+                          "users",
+                          userData.registeredUsers,
+                        );
+                        print("user registered successfully");
+                      } catch (e) {
+                        print(e.toString());
+                      }
+                    },
+                    text: "Back",
+                    num: "2",
+                    height: 40,
+                    fontSize: 18,
+                    color: Colors.white,
+                    width: MediaQuery.of(context).size.width * 0.30,
                   ),
                   InkWell(
                     onTap: () {},

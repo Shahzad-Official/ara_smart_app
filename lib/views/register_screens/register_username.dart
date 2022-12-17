@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/controllers/sign_up_controller.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,8 +11,7 @@ import 'active_fingerprint.dart';
 class RegisterUsername extends StatelessWidget {
   RegisterUsername({Key? key}) : super(key: key);
 
-  TextEditingController UsernameController = TextEditingController();
-  TextEditingController PasswordController = TextEditingController();
+  SignUpController controller = Get.put(SignUpController());
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
@@ -60,7 +60,7 @@ class RegisterUsername extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
-                    controller: UsernameController,
+                    controller: controller.userName,
                   ),
                   const SizedBox(
                     height: 10,
@@ -85,7 +85,7 @@ class RegisterUsername extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
-                    controller: PasswordController,
+                    controller: controller.password,
                   ),
                   const SizedBox(
                     height: 20,
@@ -93,16 +93,14 @@ class RegisterUsername extends StatelessWidget {
                   Row(
                     children: const [
                       AppText(
-                        text: "Create a new password",
+                        text: "Confirm new password",
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
                       ),
                     ],
                   ),
-                  TextFormField(
-                    controller: PasswordController,
-                  ),
+                  TextFormField(),
                   const SizedBox(
                     height: 10,
                   ),
@@ -111,7 +109,10 @@ class RegisterUsername extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(ActiveFingerprint());
+                          controller.createNewUser();
+                          Get.to(
+                            ActiveFingerprint(),
+                          );
                         },
                         child: CustomButton(
                             text: "Send",
