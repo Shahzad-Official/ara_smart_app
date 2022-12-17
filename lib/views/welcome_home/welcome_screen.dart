@@ -7,6 +7,9 @@ import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../knowing_balance/knowing_balance.dart';
+import '../transfer_balance/transfer_funds.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
@@ -46,7 +49,9 @@ class WelcomeScreen extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(KnowingBalance());
+                    },
                     child: CustomButton(
                         text: "Knowing the\nbank balance",
                         num: "1",
@@ -60,7 +65,9 @@ class WelcomeScreen extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(TransferFunds());
+                    },
                     child: CustomButton(
                         text: "Transfer\nof funds",
                         num: "2",
