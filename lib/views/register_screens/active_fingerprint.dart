@@ -10,7 +10,9 @@ import '../../widgets/app_text.dart';
 import 'fingerprint_if_yes.dart';
 
 class ActiveFingerprint extends StatelessWidget {
-  const ActiveFingerprint({Key? key}) : super(key: key);
+  ActiveFingerprint({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,9 @@ class ActiveFingerprint extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(AddFingerPrint());
+                      Get.to(
+                        AddFingerPrint(),
+                      );
                     },
                     child: CustomButton(
                       text: "Yes",
@@ -50,7 +54,9 @@ class ActiveFingerprint extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(() => SuccessfullyRegister());
+                      Get.to(
+                        () => SuccessfullyRegister(),
+                      );
                     },
                     child: CustomButton(
                       text: "No",

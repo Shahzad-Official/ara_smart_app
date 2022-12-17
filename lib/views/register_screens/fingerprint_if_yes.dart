@@ -9,7 +9,9 @@ import '../../widgets/app_button.dart';
 import '../../widgets/app_text.dart';
 
 class AddFingerPrint extends StatelessWidget {
-  const AddFingerPrint({Key? key}) : super(key: key);
+  AddFingerPrint({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,9 @@ class AddFingerPrint extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(SuccessfullyRegister());
+                      Get.to(
+                        SuccessfullyRegister(),
+                      );
                     },
                     child: CustomButton(
                         text: "Continue",

@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/welcome_home/first_welcome.dart';
 import 'package:ara_smart_app/views/welcome_home/welcome_screen.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
@@ -36,7 +37,9 @@ class Done_successfuly_end extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const WelcomeScreen());
+                      Get.to(
+                        FirstWelcome(),
+                      );
                     },
                     child: CustomButton(
                       text: "OK",

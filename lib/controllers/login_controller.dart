@@ -37,7 +37,11 @@ class LoginController extends GetxController {
     }).toList();
     if (currentUser.isNotEmpty) {
       Get.to(
-        () => const WelcomeScreen(),
+        () => WelcomeScreen(
+          accountNo: currentUser.first.cardNumber!,
+          balance: currentUser.first.balance.toString(),
+          name: currentUser.first.userId!,
+        ),
       );
     } else {
       Get.snackbar(
