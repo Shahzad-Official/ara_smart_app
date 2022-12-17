@@ -2,6 +2,7 @@ import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/views/knowing_balance/knowing_balance.dart';
 import 'package:ara_smart_app/views/pay_biils/pay_bills.dart';
 import 'package:ara_smart_app/views/register_screens/if_exit.dart';
+import 'package:ara_smart_app/views/transfer_balance/transfer_funds.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -75,7 +76,10 @@ class WelcomeScreen extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => TransferFunds(
+                          accountNo: accountNo, balance: balance, name: name));
+                    },
                     child: CustomButton(
                         text: "Transfer\nof funds",
                         num: "2",
@@ -90,7 +94,11 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Pay_bills());
+                      Get.to(Pay_bills(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                         text: "Pay bills",

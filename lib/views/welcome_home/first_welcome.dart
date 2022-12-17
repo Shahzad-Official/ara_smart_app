@@ -77,6 +77,7 @@ class _FirstWelcomeState extends State<FirstWelcome> {
 
   @override
   Widget build(BuildContext context) {
+    print(data);
     if (data == 'login' || data == "one") {
       Future.delayed(
         const Duration(seconds: 1),
@@ -84,6 +85,28 @@ class _FirstWelcomeState extends State<FirstWelcome> {
               context,
               MaterialPageRoute(
                 builder: (context) => const LoginScreen(),
+              ),
+            )),
+      );
+    }
+    if (data == 'sign up' || data == "two") {
+      Future.delayed(
+        const Duration(seconds: 1),
+        (() => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NewUserRegistration(),
+              ),
+            )),
+      );
+    }
+    if (data == 'exit' || data == "three") {
+      Future.delayed(
+        const Duration(seconds: 1),
+        (() => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ExitScreen(),
               ),
             )),
       );
@@ -208,7 +231,9 @@ class _FirstWelcomeState extends State<FirstWelcome> {
             child: FloatingActionButton(
               child: Icon(isListen ? Icons.mic : Icons.mic_none),
               onPressed: () async {
+                player.stop();
                 await listenToYou();
+                print(data);
               },
             ),
           ),

@@ -8,7 +8,14 @@ import 'package:get/get.dart';
 import 'account_pay_bill.dart';
 
 class Manage_registered_billers extends StatelessWidget {
-  const Manage_registered_billers({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+
+  Manage_registered_billers({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +64,13 @@ class Manage_registered_billers extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Account_pay_bill());
+                      Get.to(
+                        Account_pay_bill(
+                          accountNo: accountNo,
+                          balance: balance,
+                          name: name,
+                        ),
+                      );
                     },
                     child: CustomButton(
                       text: "MEDC Electricity",
@@ -74,7 +87,13 @@ class Manage_registered_billers extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Account_pay_bill());
+                      Get.to(
+                        Account_pay_bill(
+                          accountNo: accountNo,
+                          balance: balance,
+                          name: name,
+                        ),
+                      );
                     },
                     child: CustomButton(
                       text: "Oneic Water",
@@ -94,7 +113,13 @@ class Manage_registered_billers extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const Account_pay_bill());
+                          Get.to(
+                            Account_pay_bill(
+                              accountNo: accountNo,
+                              balance: balance,
+                              name: name,
+                            ),
+                          );
                         },
                         child: CustomButton(
                           text: "Continue",

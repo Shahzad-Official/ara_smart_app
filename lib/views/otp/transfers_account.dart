@@ -8,7 +8,13 @@ import 'package:get/get.dart';
 import 'account_remarks.dart';
 
 class Transfers_account extends StatefulWidget {
-  const Transfers_account({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Transfers_account({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   State<Transfers_account> createState() => _transfers_accountState();
@@ -172,7 +178,11 @@ class _transfers_accountState extends State<Transfers_account> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const Account_remarks());
+                          Get.to(Account_remarks(
+                            accountNo: widget.accountNo,
+                            balance: widget.balance,
+                            name: widget.name,
+                          ));
                         },
                         child: CustomButton(
                           text: "Continue",

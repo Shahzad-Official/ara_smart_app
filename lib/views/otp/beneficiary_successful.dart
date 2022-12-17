@@ -7,7 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Beneficiary_successful extends StatelessWidget {
-  const Beneficiary_successful({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Beneficiary_successful({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +42,11 @@ class Beneficiary_successful extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Search_account());
+                      Get.to(Search_account(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                       text: "OK",

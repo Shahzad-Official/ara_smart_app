@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Add_new_biller extends StatelessWidget {
-  const Add_new_biller({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Add_new_biller({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +106,13 @@ class Add_new_biller extends StatelessWidget {
                             InkWell(
                               onTap: () async {
                                 await controller.createNewBiller();
-                                Get.to(const Payer_summary());
+                                Get.to(
+                                  Payer_summary(
+                                    accountNo: accountNo,
+                                    balance: balance,
+                                    name: name,
+                                  ),
+                                );
                               },
                               child: CustomButton(
                                 text: "Continue",

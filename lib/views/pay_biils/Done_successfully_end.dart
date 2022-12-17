@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Done_successfuly_end extends StatelessWidget {
-  const Done_successfuly_end({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Done_successfuly_end({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +44,11 @@ class Done_successfuly_end extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Get.to(
-                        FirstWelcome(),
+                        WelcomeScreen(
+                          accountNo: accountNo,
+                          balance: balance,
+                          name: name,
+                        ),
                       );
                     },
                     child: CustomButton(

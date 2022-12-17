@@ -8,7 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Transfer_to_Account extends StatelessWidget {
-  const Transfer_to_Account({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Transfer_to_Account({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +56,11 @@ class Transfer_to_Account extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Add_Beneficiary());
+                      Get.to(Add_Beneficiary(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                       text: "      Add \n beneficiary",
@@ -67,7 +77,11 @@ class Transfer_to_Account extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Search_account());
+                      Get.to(Search_account(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                       text:

@@ -7,7 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Search_account extends StatelessWidget {
-  const Search_account({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Search_account({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +58,11 @@ class Search_account extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Transfers_account());
+                      Get.to(Transfers_account(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                       text: "Tahani",
@@ -69,7 +79,11 @@ class Search_account extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Transfers_account());
+                      Get.to(Transfers_account(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                       text: "Masheal",
@@ -86,7 +100,11 @@ class Search_account extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(const Transfers_account());
+                      Get.to(Transfers_account(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                       text: "Wafa",

@@ -7,7 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Add_Beneficiary extends StatelessWidget {
-  const Add_Beneficiary({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Add_Beneficiary({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +93,13 @@ class Add_Beneficiary extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              Get.to(const Beneficiary_otp());
+                              Get.to(
+                                Beneficiary_otp(
+                                  accountNo: accountNo,
+                                  balance: balance,
+                                  name: name,
+                                ),
+                              );
                             },
                             child: CustomButton(
                               text: "Yes",
