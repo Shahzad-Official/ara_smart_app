@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/add_beneficary.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Transfer_to_Account extends StatelessWidget {
   const Transfer_to_Account({Key? key}) : super(key: key);
@@ -46,7 +48,9 @@ class Transfer_to_Account extends StatelessWidget {
                     height: 15,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Add_Beneficiary());
+                    },
                     child: CustomButton(
                       text: "      Add \n beneficiary",
                       num: "1",

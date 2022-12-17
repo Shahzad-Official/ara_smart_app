@@ -1,8 +1,11 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/add_beneficary.dart';
+import 'package:ara_smart_app/views/otp/transfers.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class Enter_password_otp extends StatelessWidget {
@@ -53,7 +56,9 @@ class Enter_password_otp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const Transfer_to_Account());
+                        },
                         child: CustomButton(
                             text: "Continue",
                             num: "1",

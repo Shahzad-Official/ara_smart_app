@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/beneficiary_otp.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Add_Beneficiary extends StatelessWidget {
   const Add_Beneficiary({Key? key}) : super(key: key);
@@ -84,7 +86,9 @@ class Add_Beneficiary extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.to(const Beneficiary_otp());
+                            },
                             child: CustomButton(
                               text: "Yes",
                               num: "1",
