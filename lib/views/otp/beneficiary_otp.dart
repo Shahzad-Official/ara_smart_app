@@ -3,9 +3,10 @@ import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
-class EnterPassword extends StatelessWidget {
-  const EnterPassword({Key? key}) : super(key: key);
+class Beneficiary_otp extends StatelessWidget {
+  const Beneficiary_otp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class EnterPassword extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  const AppText(text: "1 0 8 9"),
+                  const Pinput(),
                   const SizedBox(
                     height: 80,
                   ),

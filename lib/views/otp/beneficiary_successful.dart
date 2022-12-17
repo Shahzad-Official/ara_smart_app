@@ -4,8 +4,8 @@ import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 
-class beneficiary_successful extends StatelessWidget {
-  const beneficiary_successful({Key? key}) : super(key: key);
+class Beneficiary_successful extends StatelessWidget {
+  const Beneficiary_successful({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

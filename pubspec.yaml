@@ -54,6 +54,8 @@ dependencies:
   highlight_text: any
   #audioplayer
   audioplayers: ^1.1.1
+  #dottedborder
+  dotted_border: ^2.0.0+3
 
   pinput: ^2.2.16
 

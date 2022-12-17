@@ -3,12 +3,14 @@ import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class search_account extends StatelessWidget {
-  const search_account({Key? key}) : super(key: key);
+class Search_account extends StatelessWidget {
+  const Search_account({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController _search = TextEditingController();
     return ColoredBox(
       color: AppColors.primaryColor,
       child: SafeArea(
@@ -31,23 +33,79 @@ class search_account extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
-                  const Image(
-                      height: 180,
-                      width: 180,
-                      image: AssetImage("assets/greenTick.png")),
+                  Container(
+                    margin: const EdgeInsets.only(left: 10, right: 10, top: 7),
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: TextFormField(
+                      controller: _search,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        prefixIcon: Icon(Icons.search),
+                      ),
+                    ),
+                  ),
                   const SizedBox(
-                    height: 30,
+                    height: 35,
                   ),
                   InkWell(
                     onTap: () {},
                     child: CustomButton(
-                      text: "OK",
+                      text: "Tahani",
                       num: "1",
-                      height: 60,
+                      height: 50,
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      width: MediaQuery.of(context).size.width * 0.45,
+                      width: MediaQuery.of(context).size.width * 0.42,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: CustomButton(
+                      text: "Masheal",
+                      num: "2",
+                      height: 50,
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      width: MediaQuery.of(context).size.width * 0.42,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: CustomButton(
+                      text: "Wafa",
+                      num: "3",
+                      height: 50,
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      width: MediaQuery.of(context).size.width * 0.42,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: CustomButton(
+                      text: "Back",
+                      num: "4",
+                      height: 50,
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      width: MediaQuery.of(context).size.width * 0.42,
                     ),
                   ),
                 ],

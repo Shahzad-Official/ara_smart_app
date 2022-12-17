@@ -1,6 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
-import 'package:ara_smart_app/views/splash_screen.dart';
-import 'package:ara_smart_app/views/welcome_home/first_welcome.dart';
+import 'package:ara_smart_app/views/otp/transferrence_successfully.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: AppColors().customMaterialColor(),
       ),
-      home: const SplashScreen(),
+      home: const Transferrence_successful(),
     );
   }
 }

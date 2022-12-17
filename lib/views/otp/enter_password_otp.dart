@@ -3,6 +3,7 @@ import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
 class EnterPassword extends StatelessWidget {
   const EnterPassword({Key? key}) : super(key: key);
@@ -19,20 +20,32 @@ class EnterPassword extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      SizedBox(
+                        width: 18,
+                      ),
+                      Image(
+                        image: AssetImage("assets/otpIcon.png"),
+                        height: 115,
+                        width: 115,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   const AppText(
                     text:
                         "Enter the password sent to a phone \nnumber for one time ",
                     textAlign: TextAlign.center,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                   const SizedBox(
                     height: 30,
                   ),
-                  
-
-                  
-                  const AppText(text: "9 2 2 4"),
+                  const Pinput(),
                   const SizedBox(
                     height: 80,
                   ),
@@ -45,6 +58,7 @@ class EnterPassword extends StatelessWidget {
                             text: "Continue",
                             num: "1",
                             height: 40,
+                            color: Colors.white,
                             width: MediaQuery.of(context).size.width * 0.32),
                       ),
                       InkWell(
@@ -52,6 +66,7 @@ class EnterPassword extends StatelessWidget {
                         child: CustomButton(
                             text: "Cancel",
                             num: "2",
+                            color: Colors.white,
                             height: 40,
                             width: MediaQuery.of(context).size.width * 0.32),
                       ),
