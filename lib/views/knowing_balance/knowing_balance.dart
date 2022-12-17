@@ -7,10 +7,14 @@ import '../../widgets/app_text.dart';
 import '../../widgets/background_screen.dart';
 
 class KnowingBalance extends StatelessWidget {
-  KnowingBalance({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  KnowingBalance({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
-  TextEditingController userName = TextEditingController();
-  TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
@@ -22,6 +26,7 @@ class KnowingBalance extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10.0, right: 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: const [
@@ -62,7 +67,11 @@ class KnowingBalance extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  TextFormField(controller: userName),
+                  AppText(
+                    text: name,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -79,8 +88,10 @@ class KnowingBalance extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  TextFormField(
-                    controller: password,
+                  AppText(
+                    text: accountNo,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
                   ),
                   const SizedBox(
                     height: 20,
@@ -95,7 +106,11 @@ class KnowingBalance extends StatelessWidget {
                       ),
                     ],
                   ),
-                  TextField(),
+                  AppText(
+                    text: balance,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),

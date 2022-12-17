@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/knowing_balance/knowing_balance.dart';
 import 'package:ara_smart_app/views/pay_biils/pay_bills.dart';
 import 'package:ara_smart_app/views/register_screens/if_exit.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
@@ -7,11 +8,14 @@ import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../knowing_balance/knowing_balance.dart';
-import '../transfer_balance/transfer_funds.dart';
-
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  WelcomeScreen({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +54,13 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(KnowingBalance());
+                      Get.to(
+                        () => KnowingBalance(
+                          accountNo: accountNo,
+                          balance: balance,
+                          name: name,
+                        ),
+                      );
                     },
                     child: CustomButton(
                         text: "Knowing the\nbank balance",
@@ -65,9 +75,7 @@ class WelcomeScreen extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {
-                      Get.to(TransferFunds());
-                    },
+                    onTap: () {},
                     child: CustomButton(
                         text: "Transfer\nof funds",
                         num: "2",

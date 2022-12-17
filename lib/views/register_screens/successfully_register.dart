@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/register_screens/login_screen.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -8,7 +9,9 @@ import 'package:get/get.dart';
 import '../welcome_home/welcome_screen.dart';
 
 class SuccessfullyRegister extends StatelessWidget {
-  const SuccessfullyRegister({Key? key}) : super(key: key);
+  SuccessfullyRegister({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +42,7 @@ class SuccessfullyRegister extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     Get.to(
-                      WelcomeScreen(),
+                      const LoginScreen(),
                     );
                   },
                   child: CustomButton(
