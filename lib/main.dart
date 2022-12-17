@@ -1,4 +1,7 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/add_beneficary.dart';
+import 'package:ara_smart_app/views/otp/enter_password.dart';
+import 'package:ara_smart_app/views/otp/transfers.dart';
 import 'package:ara_smart_app/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -20,7 +20,7 @@ class LoginScreen3 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
-                    children: [
+                    children: const [
                       AppText(
                         text: "Welcome",
                         fontSize: 25,
@@ -29,11 +29,11 @@ class LoginScreen3 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       AppText(
                         text: ":Log in",
                         fontSize: 25,
@@ -42,11 +42,11 @@ class LoginScreen3 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       AppText(
                         text: ":Do you want to login with",
                         fontSize: 18,
@@ -55,7 +55,7 @@ class LoginScreen3 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -70,7 +70,7 @@ class LoginScreen3 extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.6,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   InkWell(
@@ -85,11 +85,11 @@ class LoginScreen3 extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.6,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       AppText(
                         text: ":Do you want to",
                         fontSize: 18,
@@ -98,7 +98,7 @@ class LoginScreen3 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -116,7 +116,7 @@ class LoginScreen3 extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.3,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       InkWell(

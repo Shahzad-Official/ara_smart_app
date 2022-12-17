@@ -19,12 +19,12 @@ class ExitScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  AppText(
+                  const AppText(
                     text: "Are you sure you \n:want to exit",
                     textAlign: TextAlign.center,
                     fontSize: 25,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   InkWell(
@@ -38,7 +38,7 @@ class ExitScreen extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   InkWell(

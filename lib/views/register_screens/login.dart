@@ -24,9 +24,9 @@ class Login extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
-                      children: [
+                      children: const [
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, right: 10),
+                          padding: EdgeInsets.only(left: 10.0, right: 10),
                           child: AppText(
                             text: "Welcome",
                             fontWeight: FontWeight.w500,
@@ -36,13 +36,13 @@ class Login extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Row(
-                      children: [
+                      children: const [
                         Padding(
-                          padding: const EdgeInsets.only(left: 10.0, right: 10),
+                          padding: EdgeInsets.only(left: 10.0, right: 10),
                           child: AppText(
                             text: ":Do you want",
                             fontWeight: FontWeight.w500,
@@ -53,7 +53,7 @@ class Login extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
@@ -75,7 +75,7 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
@@ -93,7 +93,7 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
