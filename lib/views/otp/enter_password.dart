@@ -19,6 +19,7 @@ class EnterPassword extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  
                   const AppText(
                     text:
                         "Enter the password sent to a phone \nnumber for one time ",
@@ -28,6 +29,9 @@ class EnterPassword extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
+                  
+
+                  
                   const AppText(text: "9 2 2 4"),
                   const SizedBox(
                     height: 80,
