@@ -8,7 +8,13 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class Otp3 extends StatelessWidget {
-  const Otp3({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  Otp3({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +62,11 @@ class Otp3 extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const Transferrence_successful());
+                          Get.to(Transferrence_successful(
+                            accountNo: accountNo,
+                            balance: balance,
+                            name: name,
+                          ));
                         },
                         child: CustomButton(
                             text: "Continue",

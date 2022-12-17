@@ -9,7 +9,13 @@ import '../otp/transfers_account.dart';
 import 'between_own_account_2.dart';
 
 class TransferBtweenOwnAccount extends StatefulWidget {
-  const TransferBtweenOwnAccount({super.key});
+  String name, accountNo, balance;
+  TransferBtweenOwnAccount({
+    super.key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  });
 
   @override
   State<TransferBtweenOwnAccount> createState() =>
@@ -172,7 +178,11 @@ class _TransferBtweenOwnAccountState extends State<TransferBtweenOwnAccount> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(BetweenOwnAccountSecond());
+                          Get.to(BetweenOwnAccountSecond(
+                            accountNo: widget.accountNo,
+                            balance: widget.balance,
+                            name: widget.name,
+                          ));
                         },
                         child: CustomButton(
                           text: "Continue",

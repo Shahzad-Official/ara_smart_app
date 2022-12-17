@@ -8,7 +8,13 @@ import 'package:get/get.dart';
 import '../../widgets/app_button.dart';
 
 class BetweenOwnAccountSecond extends StatelessWidget {
-  const BetweenOwnAccountSecond({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  BetweenOwnAccountSecond({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +83,11 @@ class BetweenOwnAccountSecond extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Get.to(Enter_password_otp());
+                        Get.to(Enter_password_otp(
+                          accountNo: accountNo,
+                          balance: balance,
+                          name: name,
+                        ));
                       },
                       child: CustomButton(
                         text: "Continue",
@@ -90,7 +100,9 @@ class BetweenOwnAccountSecond extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.back();
+                      },
                       child: CustomButton(
                         text: "Cancel",
                         num: "2",

@@ -1,4 +1,6 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
+import 'package:ara_smart_app/views/transfer_balance/between_own_account_2.dart';
 import 'package:ara_smart_app/views/transfer_balance/transfer_between_own_account.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +10,13 @@ import '../../widgets/app_button.dart';
 import '../../widgets/app_text.dart';
 
 class TransferFunds extends StatelessWidget {
-  const TransferFunds({Key? key}) : super(key: key);
+  String name, accountNo, balance;
+  TransferFunds({
+    Key? key,
+    required this.accountNo,
+    required this.balance,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +55,11 @@ class TransferFunds extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(TransferBtweenOwnAccount());
+                      Get.to(BetweenOwnAccountSecond(
+                        accountNo: accountNo,
+                        balance: balance,
+                        name: name,
+                      ));
                     },
                     child: CustomButton(
                         text: "Between own\naccount",
@@ -62,7 +74,10 @@ class TransferFunds extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => TransferBtweenOwnAccount(
+                          accountNo: accountNo, balance: balance, name: name));
+                    },
                     child: CustomButton(
                         text: "Between other\naccount",
                         num: "2",
@@ -79,7 +94,9 @@ class TransferFunds extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                             text: "Back",
                             num: "4",
@@ -90,7 +107,9 @@ class TransferFunds extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.30),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => ExitScreen());
+                        },
                         child: CustomButton(
                             text: "Exit",
                             num: "5",
