@@ -1,19 +1,93 @@
+import 'package:audioplayers/audioplayers.dart';
+import 'package:avatar_glow/avatar_glow.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 
 import '../../constants/app_colors.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/app_text.dart';
 import '../../widgets/background_screen.dart';
-import 'if_exit.dart';
-import 'login_screen3.dart';
-import 'new_user_registration.dart';
+import '../register_screens/if_exit.dart';
+import '../register_screens/login_screen.dart';
+import '../register_screens/new_user_registration.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class FirstWelcome extends StatefulWidget {
+  const FirstWelcome({Key? key}) : super(key: key);
+
+  @override
+  State<FirstWelcome> createState() => _FirstWelcomeState();
+}
+
+class _FirstWelcomeState extends State<FirstWelcome> {
+  final player = AudioPlayer();
+  SpeechToText speech = SpeechToText();
+  String textString = "Press The Button";
+  bool isListen = false;
+  String? data;
+  listenToYou() async {
+    if (!isListen) {
+      bool avail = await speech.initialize(
+        onStatus: (status) {},
+        onError: (errorNotification) {},
+      );
+      if (avail) {
+        isListen = true;
+        if (mounted) setState(() {});
+        speech.listen(onResult: (value) {
+          data = value.recognizedWords;
+          if (mounted) setState(() {});
+        });
+        Future.delayed(
+          const Duration(seconds: 7),
+          (() {
+            isListen = false;
+            if (mounted) setState(() {});
+            speech.stop();
+          }),
+        );
+      }
+    } else {
+      isListen = false;
+      if (mounted) setState(() {});
+      speech.stop();
+    }
+  }
+
+  playCommand() async {
+    String audioasset = "assets/audios/command.mp3";
+    ByteData bytes = await rootBundle.load(audioasset);
+    Uint8List soundbytes =
+        bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
+    await player.play(
+      BytesSource(soundbytes),
+    );
+    player.onPlayerComplete.listen((event) {
+      listenToYou();
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    playCommand();
+  }
 
   @override
   Widget build(BuildContext context) {
+    if (data == 'login' || data == "one") {
+      Future.delayed(
+        const Duration(seconds: 1),
+        (() => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoginScreen(),
+              ),
+            )),
+      );
+    }
     return ColoredBox(
       color: AppColors.primaryColor,
       child: SafeArea(
@@ -60,7 +134,7 @@ class Login extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             Get.to(
-                              const LoginScreen3(),
+                              LoginScreen(),
                             );
                           },
                           child: Padding(
@@ -118,6 +192,20 @@ class Login extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          floatingActionButton: AvatarGlow(
+            animate: isListen,
+            glowColor: Colors.red,
+            endRadius: 65.0,
+            duration: const Duration(milliseconds: 2000),
+            repeatPauseDuration: const Duration(milliseconds: 100),
+            repeat: true,
+            child: FloatingActionButton(
+              child: Icon(isListen ? Icons.mic : Icons.mic_none),
+              onPressed: () async {
+                await listenToYou();
+              },
+            ),
           ),
         ),
       ),

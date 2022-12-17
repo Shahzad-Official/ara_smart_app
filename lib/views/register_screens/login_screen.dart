@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/controllers/login_controller.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -8,8 +9,8 @@ import 'package:get/get.dart';
 import 'login_with_data_entry.dart';
 import 'login_with_fingerprint.dart';
 
-class LoginScreen3 extends StatelessWidget {
-  const LoginScreen3({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +83,7 @@ class LoginScreen3 extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Get.to(
-                        LoginWithFingreprint(),
+                        const LoginWithFingreprint(),
                       );
                     },
                     child: CustomButton(
@@ -96,7 +97,8 @@ class LoginScreen3 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,),
+                    height: 10,
+                  ),
                   const SizedBox(
                     height: 15,
                   ),
@@ -111,8 +113,9 @@ class LoginScreen3 extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,),
-                const  SizedBox(
+                    height: 10,
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
                   Row(

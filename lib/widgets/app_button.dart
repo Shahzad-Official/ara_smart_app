@@ -12,59 +12,64 @@ class CustomButton extends StatelessWidget {
   final Color? color;
   final TextAlign? textAlign;
   final FontWeight? fontWeight;
-  CustomButton(
-      {Key? key,
-      required this.text,
-      required this.num,
-      required this.height,
-      required this.width,
-      this.textAlign,
-      this.color,
-      this.fontSize,
-      this.fontWeight})
-      : super(key: key);
+  void Function()? onTap;
+  CustomButton({
+    Key? key,
+    required this.text,
+    required this.num,
+    required this.height,
+    required this.width,
+    this.textAlign,
+    this.color,
+    this.fontSize,
+    this.fontWeight,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: AppColors.primaryColor,
-        borderRadius: BorderRadius.circular(100),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 25,
-            width: 25,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(100),
-            ),
-            child: Center(
-              child: AppText(
-                text: num,
-                color: AppColors.primaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: AppColors.primaryColor,
+          borderRadius: BorderRadius.circular(100),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 25,
+              width: 25,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: Center(
+                child: AppText(
+                  text: num,
+                  color: AppColors.primaryColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Text(
-            text,
-            textAlign: textAlign,
-            style: GoogleFonts.notoSerif(
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-              color: color,
+            const SizedBox(
+              width: 20,
             ),
-          )
-        ],
+            Text(
+              text,
+              textAlign: textAlign,
+              style: GoogleFonts.notoSerif(
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+                color: color,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
