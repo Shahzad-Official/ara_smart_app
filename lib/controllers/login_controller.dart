@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/database/user_data.dart';
 import 'package:ara_smart_app/models/user_model.dart';

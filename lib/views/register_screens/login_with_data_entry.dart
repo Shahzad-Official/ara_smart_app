@@ -1,6 +1,7 @@
 import 'package:ara_smart_app/database/user_data.dart';
 import 'package:ara_smart_app/models/user_model.dart';
 import 'package:ara_smart_app/services/register_user_service.dart';
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
@@ -114,30 +115,8 @@ class LoginWithData extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomButton(
-                    onTap: () async {
-                      try {
-                        userModel = UserModel(
-                          balance: 100,
-                          cardNumber: "cardNO",
-                          mobile: "mobile",
-                          password: "password",
-                          userId: "userId",
-                        );
-
-                        userData.registeredUsers.add(
-                          userModel.toJson(),
-                        );
-
-                        var box = await Hive.openBox('myBox');
-
-                        box.put(
-                          "users",
-                          userData.registeredUsers,
-                        );
-                        print("user registered successfully");
-                      } catch (e) {
-                        print(e.toString());
-                      }
+                    onTap: () {
+                      Get.back();
                     },
                     text: "Back",
                     num: "2",
@@ -147,7 +126,9 @@ class LoginWithData extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.30,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => ExitScreen());
+                    },
                     child: CustomButton(
                       text: "Exit",
                       num: "3",

@@ -1,5 +1,4 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
-import 'package:ara_smart_app/views/otp/add_beneficary.dart';
 import 'package:ara_smart_app/views/otp/transfers.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';

@@ -22,4 +22,18 @@ class UserData {
       "balance": 200
     }
   ];
+  List<Map<String, dynamic>> registeredBillers = [
+    {
+      "name": "MEDC",
+      "type": "Electricity",
+      "cardNumber": "03047196315",
+      "balance": 200
+    },
+    {
+      "name": "ONEIC",
+      "type": "Water",
+      "cardNumber": "03047196315",
+      "balance": 400
+    }
+  ];
 }
