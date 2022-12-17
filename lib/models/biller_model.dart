@@ -6,7 +6,7 @@ class BillerModel {
 
   BillerModel({this.name, this.type, this.cardNumber, this.balance});
 
-  BillerModel.fromJson(Map<String, dynamic> json) {
+  BillerModel.fromJson(json) {
     name = json['name'];
     type = json['type'];
     cardNumber = json['cardNumber'];

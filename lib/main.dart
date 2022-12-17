@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/controllers/biller_controller.dart';
 import 'package:ara_smart_app/controllers/search_biller.dart';
 import 'package:ara_smart_app/models/biller_model.dart';
 
@@ -41,73 +42,89 @@ class MyApp extends StatelessWidget {
 // }
 
 // class _TestState extends State<Test> {
-//   var _billersList = [];
-//   List<BillerModel> billersList = [];
+//   List billersList = [];
+//   List<BillerModel> newList = [];
 
 //   getDbdata() async {
 //     billersList.clear();
 
 //     var box = await Hive.openBox('billbox');
-//     _billersList = box.get("billers");
-//     var newData = _billersList.toList();
+//     billersList = box.get("billers");
+//     var newData = billersList.toList();
 
-//     for (var i in newData) {
-//       billersList.add(BillerModel.fromJson(i));
-//     }
 //     print(billersList.length);
 //   }
 
 //   @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     getDbdata();
+//   }
+
+//   @override
 //   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: Padding(
-//           padding: const EdgeInsets.all(18.0),
-//           child: Column(
-//             children: [
-//               GetBuilder<SearchBiller>(
-//                 init: SearchBiller(),
-//                 initState: (_) {},
-//                 builder: (_) {
-//                   return Column(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-//                       FutureBuilder(
-//                           future: getDbdata(),
-//                           builder: (context, snapshot) {
-//                             return AppText(
-//                               text: _billersList.toString(),
-//                               fontWeight: FontWeight.w500,
-//                             );
-//                           }),
-//                       ElevatedButton(
-//                         onPressed: () async {},
-//                         child: AppText(text: "add User"),
-//                       ),
-//                     ],
-//                   );
-//                 },
-//               ),
-//               GetBuilder<SearchBiller>(
-//                 init: SearchBiller(),
-//                 initState: (_) {},
-//                 builder: (_) {
-//                   return Column(
-//                     children: [
-//                       TextFormField(
-//                         controller: _.name,
-//                       ),
-//                       ElevatedButton(
-//                         onPressed: () async {
-//                           await _.isValidUser();
-//                         },
-//                         child: Text("getsUsers"),
-//                       ),
-//                     ],
-//                   );
-//                 },
-//               ),
-//             ],
+//     return SafeArea(
+//       child: Scaffold(
+//         body: Center(
+//           child: Padding(
+//             padding: const EdgeInsets.all(18.0),
+//             child: Column(
+//               children: [
+//                 GetBuilder<SearchBiller>(
+//                   init: SearchBiller(),
+//                   initState: (_) {},
+//                   builder: (_) {
+//                     return Column(
+//                       mainAxisAlignment: MainAxisAlignment.center,
+//                       children: [
+//                         FutureBuilder(
+//                             future: getDbdata(),
+//                             builder: (context, snapshot) {
+//                               return Column(
+//                                 children: [
+//                                   AppText(
+//                                     text: billersList.toString(),
+//                                     fontWeight: FontWeight.w500,
+//                                   ),
+//                                   AppText(
+//                                     text: billersList.runtimeType.toString(),
+//                                     fontWeight: FontWeight.w500,
+//                                   ),
+//                                 ],
+//                               );
+//                             }),
+//                         ElevatedButton(
+//                           onPressed: () async {
+//                             await getDbdata();
+//                           },
+//                           child: AppText(text: "add User"),
+//                         ),
+//                       ],
+//                     );
+//                   },
+//                 ),
+//                 GetBuilder<BillerController>(
+//                   init: BillerController(),
+//                   initState: (_) {},
+//                   builder: (_) {
+//                     return Column(
+//                       children: [
+//                         TextFormField(
+//                           controller: _.balance,
+//                         ),
+//                         ElevatedButton(
+//                           onPressed: () async {
+//                             await _.createNewBiller();
+//                           },
+//                           child: Text("getsUsers"),
+//                         ),
+//                       ],
+//                     );
+//                   },
+//                 ),
+//               ],
+//             ),
 //           ),
 //         ),
 //       ),
