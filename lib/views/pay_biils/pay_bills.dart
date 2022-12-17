@@ -1,6 +1,7 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/views/pay_biils/Manage_registered_billers.dart';
 import 'package:ara_smart_app/views/pay_biils/add_new_biller.dart';
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -104,7 +105,7 @@ class Pay_bills extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          Get.back();
+                          Get.to(() => ExitScreen());
                         },
                         child: CustomButton(
                           text: "Exit",
