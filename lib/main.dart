@@ -1,15 +1,15 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/views/register_screens/login.dart';
+import 'package:ara_smart_app/views/splash_screen.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 import 'package:avatar_glow/avatar_glow.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:speech_to_text/speech_recognition_result.dart';
-import 'package:speech_to_text/speech_to_text.dart';
+
+import 'package:speech_to_text/speech_to_text.dart' as speechToText;
 
 void main() {
   runApp(const MyApp());
@@ -43,14 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
   bool isListen = false;
   String? data;
   double confidence = 1.0;
-  final Map<String, HighlightedWord> highlightWords = {
-    "flutter": HighlightedWord(
-        textStyle:
-            TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
-    "developer": HighlightedWord(
-        textStyle:
-            TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold)),
-  };
 
   listenToYou() async {
     if (!isListen) {
