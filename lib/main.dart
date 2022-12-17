@@ -1,9 +1,15 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/register_screens/login.dart';
 import 'package:ara_smart_app/views/splash_screen.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+import 'package:avatar_glow/avatar_glow.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:speech_to_text/speech_recognition_result.dart';
-import 'package:speech_to_text/speech_to_text.dart';
+
+import 'package:speech_to_text/speech_to_text.dart' as speechToText;
 
 void main() {
   runApp(const MyApp());
@@ -26,95 +32,149 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  SpeechToText _speechToText = SpeechToText();
-  bool _speechEnabled = false;
-  String _lastWords = '';
+  final player = AudioPlayer();
+  speechToText.SpeechToText speech = speechToText.SpeechToText();
+  String textString = "Press The Button";
+  bool isListen = false;
+  String? data;
+  double confidence = 1.0;
 
-  @override
-  void initState() {
-    super.initState();
-    _initSpeech();
+  listenToYou() async {
+    if (!isListen) {
+      bool avail = await speech.initialize(
+        onStatus: (status) {},
+        onError: (errorNotification) {},
+      );
+      if (avail) {
+        setState(() {
+          isListen = true;
+        });
+        speech.listen(onResult: (value) {
+          setState(() {
+            data = value.recognizedWords;
+          });
+        });
+        Future.delayed(
+          const Duration(seconds: 7),
+          (() {
+            setState(() {
+              isListen = false;
+            });
+            speech.stop();
+          }),
+        );
+      }
+    } else {
+      setState(() {
+        isListen = false;
+      });
+      speech.stop();
+    }
   }
 
-  /// This has to happen only once per app
-  void _initSpeech() async {
-    _speechEnabled = await _speechToText.initialize();
-    setState(() {});
+  playCommand() async {
+    String audioasset = "assets/audios/command.mp3";
+    ByteData bytes = await rootBundle.load(audioasset);
+    Uint8List soundbytes =
+        bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
+    await player.play(
+      BytesSource(soundbytes),
+    );
+    player.onPlayerComplete.listen((event) {
+      listenToYou();
+    });
   }
 
-  /// Each time to start a speech recognition session
-  void _startListening() async {
-    await _speechToText.listen(onResult: _onSpeechResult);
-    setState(() {});
-  }
-
-  /// Manually stop the active speech recognition session
-  /// Note that there are also timeouts that each platform enforces
-  /// and the SpeechToText plugin supports setting timeouts on the
-  /// listen method.
-  void _stopListening() async {
-    await _speechToText.stop();
-    setState(() {});
-  }
-
-  /// This is the callback that the SpeechToText plugin calls when
-  /// the platform returns recognized words.
-  void _onSpeechResult(SpeechRecognitionResult result) {
-    setState(() {
-      _lastWords = result.recognizedWords;
+  repeatCommand() async {
+    String audioasset = "assets/audios/repeat_command.mp3";
+    ByteData bytes = await rootBundle.load(audioasset);
+    Uint8List soundbytes =
+        bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
+    await player.play(
+      BytesSource(soundbytes),
+    );
+    player.onPlayerComplete.listen((event) {
+      listenToYou();
     });
   }
 
   @override
+  void initState() {
+    super.initState();
+    speech = speechToText.SpeechToText();
+    playCommand();
+  }
+
+  checkCommands() {
+    if (data == 'login') {
+      Future.delayed(
+        const Duration(seconds: 1),
+        (() => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Login(),
+              ),
+            )),
+      );
+    } else if (data != null && data != "login") {
+      repeatCommand();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (data == 'login' || data == "one") {
+      Future.delayed(
+        const Duration(seconds: 1),
+        (() => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Login(),
+              ),
+            )),
+      );
+    }
     return Scaffold(
       appBar: AppBar(
-        title: Text('Speech Demo'),
+        title: Text("Voice commands"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(16),
-              child: Text(
-                'Recognized words:',
-                style: TextStyle(fontSize: 20.0),
-              ),
+          children: [
+            SizedBox(
+              height: 10.0,
             ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.all(16),
-                child: Text(
-                  // If listening is active show the recognized words
-                  _speechToText.isListening
-                      ? '$_lastWords'
-                      // If listening isn't active but could be tell the user
-                      // how to start it, otherwise indicate that speech
-                      // recognition is not yet ready or not supported on
-                      // the target device
-                      : _speechEnabled
-                          ? 'Tap the microphone to start listening...'
-                          : 'Speech not available',
-                ),
+            Container(
+              child: Text(
+                data ?? "Confidence",
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red),
               ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed:
-            // If not yet listening for speech start, otherwise stop
-            _speechToText.isNotListening ? _startListening : _stopListening,
-        tooltip: 'Listen',
-        child: Icon(_speechToText.isNotListening ? Icons.mic_off : Icons.mic),
+      floatingActionButton: AvatarGlow(
+        animate: isListen,
+        glowColor: Colors.red,
+        endRadius: 65.0,
+        duration: Duration(milliseconds: 2000),
+        repeatPauseDuration: Duration(milliseconds: 100),
+        repeat: true,
+        child: FloatingActionButton(
+          child: Icon(isListen ? Icons.mic : Icons.mic_none),
+          onPressed: () async {
+            await listenToYou();
+          },
+        ),
       ),
     );
   }

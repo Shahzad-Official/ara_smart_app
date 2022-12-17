@@ -10,6 +10,7 @@ class CustomButton extends StatelessWidget {
   double width;
   final double? fontSize;
   final Color? color;
+  final TextAlign? textAlign;
   final FontWeight? fontWeight;
   CustomButton(
       {Key? key,
@@ -17,6 +18,7 @@ class CustomButton extends StatelessWidget {
       required this.num,
       required this.height,
       required this.width,
+      this.textAlign,
       this.color,
       this.fontSize,
       this.fontWeight})
@@ -55,6 +57,7 @@ class CustomButton extends StatelessWidget {
           ),
           Text(
             text,
+            textAlign: textAlign,
             style: GoogleFonts.notoSerif(
               fontSize: fontSize,
               fontWeight: fontWeight,

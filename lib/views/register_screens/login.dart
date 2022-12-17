@@ -7,6 +7,7 @@ import '../../widgets/app_text.dart';
 import '../../widgets/background_screen.dart';
 import 'if_exit.dart';
 import 'login_screen3.dart';
+import 'new_user_registration.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class Login extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             Get.to(
-                              LoginScreen3(),
+                              const LoginScreen3(),
                             );
                           },
                           child: Padding(
@@ -79,7 +80,9 @@ class Login extends StatelessWidget {
                           height: 20,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(const NewUserRegistration());
+                          },
                           child: Padding(
                             padding:
                                 const EdgeInsets.only(left: 25.0, right: 25),
@@ -98,7 +101,7 @@ class Login extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            Get.to(ExitScreen());
+                            Get.to(const ExitScreen());
                           },
                           child: CustomButton(
                             text: "Exit",
