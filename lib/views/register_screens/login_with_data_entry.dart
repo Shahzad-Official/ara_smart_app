@@ -1,15 +1,16 @@
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/app_colors.dart';
+import '../../controllers/login_controller.dart';
 import '../../widgets/app_text.dart';
 
 class LoginWithData extends StatelessWidget {
+  final controller = Get.put(LoginController());
   LoginWithData({Key? key}) : super(key: key);
 
-  TextEditingController UserNameController = TextEditingController();
-  TextEditingController PasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -69,7 +70,7 @@ class LoginWithData extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                controller: UserNameController,
+                controller: controller.userId,
               ),
               const SizedBox(
                 height: 10,
@@ -84,21 +85,21 @@ class LoginWithData extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                controller: PasswordController,
+                controller: controller.password,
               ),
               const SizedBox(
                 height: 20,
               ),
-              InkWell(
-                onTap: () {},
-                child: CustomButton(
-                  text: "Log in",
-                  num: "1",
-                  height: 40,
-                  fontSize: 18,
-                  color: Colors.white,
-                  width: MediaQuery.of(context).size.width * 0.35,
-                ),
+              CustomButton(
+                onTap: () {
+                  controller.isValidUser();
+                },
+                text: "Log in",
+                num: "1",
+                height: 40,
+                fontSize: 18,
+                color: Colors.white,
+                width: MediaQuery.of(context).size.width * 0.35,
               ),
               const SizedBox(
                 height: 30,

@@ -1,15 +1,14 @@
-import 'dart:convert';
-
+import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/database/user_data.dart';
 import 'package:ara_smart_app/models/user_model.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ara_smart_app/views/register_screens/registration_otp.dart';
+import 'package:ara_smart_app/widgets/app_text.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../views/splash_screen.dart';
-
 class LoginController extends GetxController {
-  UserData _userData = UserData();
-  List<UserModel> _usersList = [];
+  final UserData _userData = UserData();
+  final List<UserModel> _usersList = [];
   List<UserModel> currentUser = [];
   TextEditingController userId = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -29,12 +28,27 @@ class LoginController extends GetxController {
     }).toList();
     if (currentUser.isNotEmpty) {
       Get.off(
-        () => SplashScreen(),
+        () => const RegistrationOtp(),
       );
     } else {
       Get.snackbar(
-        "Error",
-        "Please enter correct details",
+        "",
+        "",
+        backgroundColor: AppColors.primaryColor,
+        borderColor: Colors.white,
+        borderWidth: 1.5,
+        titleText: const AppText(
+          text: "Error",
+          color: Colors.white,
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+        ),
+        messageText: const AppText(
+          text: "Please Enter Correct Details",
+          color: Colors.white,
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+        ),
       );
     }
   }

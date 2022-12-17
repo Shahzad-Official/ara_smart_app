@@ -1,6 +1,6 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/constants/svg_icons.dart';
-import 'package:ara_smart_app/views/register_screens/login.dart';
+import 'package:ara_smart_app/views/welcome_home/first_welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
       (() => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const Login(),
+              builder: (context) => FirstWelcome(),
             ),
           )),
     );
