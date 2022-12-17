@@ -2,8 +2,10 @@ import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/app_text.dart';
+import '../welcome_home/welcome_screen.dart';
 
 class LoginWithFingreprint extends StatelessWidget {
   const LoginWithFingreprint({Key? key}) : super(key: key);
@@ -55,7 +57,9 @@ class LoginWithFingreprint extends StatelessWidget {
                   height: 30,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(WelcomeScreen());
+                  },
                   child: CustomButton(
                       text: "Login",
                       num: "1",
