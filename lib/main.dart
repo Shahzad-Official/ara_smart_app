@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+
 import 'package:ara_smart_app/controllers/login_controller.dart';
 import 'package:ara_smart_app/controllers/sign_up_controller.dart';
 import 'package:ara_smart_app/database/user_data.dart';
@@ -6,6 +7,11 @@ import 'package:ara_smart_app/models/user_model.dart';
 import 'package:ara_smart_app/views/register_screens/login_with_data_entry.dart';
 import 'package:ara_smart_app/views/splash_screen.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
+
+import 'package:ara_smart_app/views/otp/enter_password_otp.dart';
+import 'package:ara_smart_app/views/pay_biils/account_pay_bill.dart';
+import 'package:ara_smart_app/views/pay_biils/reamrks_bill.dart';
+import 'package:ara_smart_app/views/splash_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

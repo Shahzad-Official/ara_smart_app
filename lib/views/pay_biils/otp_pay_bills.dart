@@ -3,9 +3,10 @@ import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
-class EnterPassword extends StatelessWidget {
-  const EnterPassword({Key? key}) : super(key: key);
+class Otp_pay_bills extends StatelessWidget {
+  const Otp_pay_bills({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +20,37 @@ class EnterPassword extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      SizedBox(
+                        width: 18,
+                      ),
+                      Image(
+                        image: AssetImage("assets/otpIcon.png"),
+                        height: 115,
+                        width: 115,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   const AppText(
                     text:
-                        "Enter the password sent to a phone \nnumber for one time ",
+                        "Enter the password sent to a phone number for one time ",
                     textAlign: TextAlign.center,
-                    fontSize: 20,
+                    fontSize: 15,
                   ),
                   const SizedBox(
                     height: 30,
                   ),
-                  
-
-                  
-                  const AppText(text: "9 2 2 4"),
+                  const Pinput(),
                   const SizedBox(
                     height: 80,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
                         onTap: () {},
@@ -45,15 +58,17 @@ class EnterPassword extends StatelessWidget {
                             text: "Continue",
                             num: "1",
                             height: 40,
-                            width: MediaQuery.of(context).size.width * 0.32),
+                            color: Colors.white,
+                            width: MediaQuery.of(context).size.width * 0.33),
                       ),
                       InkWell(
                         onTap: () {},
                         child: CustomButton(
                             text: "Cancel",
                             num: "2",
+                            color: Colors.white,
                             height: 40,
-                            width: MediaQuery.of(context).size.width * 0.32),
+                            width: MediaQuery.of(context).size.width * 0.33),
                       ),
                     ],
                   )

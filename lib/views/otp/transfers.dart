@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/add_beneficary.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Transfer_to_Account extends StatelessWidget {
   const Transfer_to_Account({Key? key}) : super(key: key);
@@ -35,18 +37,20 @@ class Transfer_to_Account extends StatelessWidget {
                   Row(
                     children: const [
                       AppText(
-                        text: "Do you want",
-                        fontSize: 25,
+                        text: "Do you want:",
+                        fontSize: 23,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
                       ),
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Add_Beneficiary());
+                    },
                     child: CustomButton(
                       text: "      Add \n beneficiary",
                       num: "1",
@@ -54,7 +58,7 @@ class Transfer_to_Account extends StatelessWidget {
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      width: MediaQuery.of(context).size.width * 0.5,
+                      width: MediaQuery.of(context).size.width * 0.6,
                     ),
                   ),
                   const SizedBox(
@@ -67,17 +71,17 @@ class Transfer_to_Account extends StatelessWidget {
                           "  There is an\n account you want\n   to transfer to",
                       num: "2",
                       height: 85,
-                      fontSize: 20,
+                      fontSize: 16,
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      width: MediaQuery.of(context).size.width * 0.5,
+                      width: MediaQuery.of(context).size.width * 0.60,
                     ),
                   ),
                   const SizedBox(
                     height: 30,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
                         onTap: () {},
