@@ -54,11 +54,16 @@ dependencies:
   highlight_text: any
   #audioplayer
   audioplayers: ^1.1.1
+
+  #pinput_fields
+
   #dottedborder
   dotted_border: ^2.0.0+3
 
   pinput: ^2.2.16
-
+  #local_database
+  path_provider: any
+  hive: any
 
 dev_dependencies:
   flutter_test:

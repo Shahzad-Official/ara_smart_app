@@ -83,7 +83,7 @@ class _FirstWelcomeState extends State<FirstWelcome> {
         (() => Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => LoginScreen(),
+                builder: (context) => const LoginScreen(),
               ),
             )),
       );
@@ -133,8 +133,9 @@ class _FirstWelcomeState extends State<FirstWelcome> {
                         ),
                         InkWell(
                           onTap: () {
-                            Get.to(
-                              LoginScreen(),
+                            player.stop();
+                            Get.offAll(
+                              const LoginScreen(),
                             );
                           },
                           child: Padding(
@@ -155,7 +156,10 @@ class _FirstWelcomeState extends State<FirstWelcome> {
                         ),
                         InkWell(
                           onTap: () {
-                            Get.to(const NewUserRegistration());
+                            player.stop();
+                            Get.offAll(
+                              NewUserRegistration(),
+                            );
                           },
                           child: Padding(
                             padding:
@@ -175,6 +179,7 @@ class _FirstWelcomeState extends State<FirstWelcome> {
                         ),
                         InkWell(
                           onTap: () {
+                            player.stop();
                             Get.to(const ExitScreen());
                           },
                           child: CustomButton(

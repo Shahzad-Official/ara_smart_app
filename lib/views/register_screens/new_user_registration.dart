@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/controllers/sign_up_controller.dart';
 import 'package:ara_smart_app/views/register_screens/registration_otp.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
@@ -7,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NewUserRegistration extends StatelessWidget {
-  const NewUserRegistration({Key? key}) : super(key: key);
+  NewUserRegistration({Key? key}) : super(key: key);
+  SignUpController controller = Get.put(SignUpController());
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,9 @@ class NewUserRegistration extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  TextFormField(),
+                  TextFormField(
+                    controller: controller.mobile,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -79,7 +83,9 @@ class NewUserRegistration extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  TextFormField(),
+                  TextFormField(
+                    controller: controller.cardNo,
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -93,7 +99,9 @@ class NewUserRegistration extends StatelessWidget {
                       ),
                     ],
                   ),
-                  TextFormField(),
+                  TextFormField(
+                    controller: controller.balance,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
