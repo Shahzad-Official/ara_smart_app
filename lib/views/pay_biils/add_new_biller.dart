@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/pay_biils/payer_summary.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Add_new_biller extends StatelessWidget {
   const Add_new_biller({Key? key}) : super(key: key);
@@ -93,7 +95,9 @@ class Add_new_biller extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const Payer_summary());
+                        },
                         child: CustomButton(
                           text: "Continue",
                           num: "1",

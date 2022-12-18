@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/pay_biils/successfully_pay_bills.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class Otp_pay_bills extends StatelessWidget {
@@ -53,7 +55,9 @@ class Otp_pay_bills extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const Successfully_pay_bills());
+                        },
                         child: CustomButton(
                             text: "Continue",
                             num: "1",
