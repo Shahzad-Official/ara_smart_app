@@ -43,18 +43,17 @@ class Account_remarks extends StatelessWidget {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      AppText(
+                    children: [
+                      const AppText(
                         text: "OMR:",
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
                         color: Colors.red,
                       ),
-                      AppText(
-                        text: "50.000",
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
+                      Text(
+                        "50.000",
+                        style: GoogleFonts.poppins(
+                            decoration: TextDecoration.underline),
                       ),
                     ],
                   ),
