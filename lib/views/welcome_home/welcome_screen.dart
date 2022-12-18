@@ -1,5 +1,9 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+<<<<<<< HEAD
 import 'package:ara_smart_app/views/pay_biils/pay_bills.dart';
+=======
+import 'package:ara_smart_app/views/register_screens/if_exit.dart';
+>>>>>>> 7771fac4c082c2fdbd03495c69f32ac3f56a04e2
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -92,7 +96,9 @@ class WelcomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                             text: "Back",
                             num: "4",
@@ -103,7 +109,9 @@ class WelcomeScreen extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.30),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => ExitScreen());
+                        },
                         child: CustomButton(
                             text: "Exit",
                             num: "5",

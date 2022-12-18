@@ -2,6 +2,7 @@ import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/database/user_data.dart';
 import 'package:ara_smart_app/models/user_model.dart';
 import 'package:ara_smart_app/views/register_screens/registration_otp.dart';
+import 'package:ara_smart_app/views/welcome_home/welcome_screen.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,8 +36,8 @@ class LoginController extends GetxController {
       }
     }).toList();
     if (currentUser.isNotEmpty) {
-      Get.off(
-        () => const RegistrationOtp(),
+      Get.to(
+        () => const WelcomeScreen(),
       );
     } else {
       Get.snackbar(
