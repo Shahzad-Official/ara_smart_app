@@ -1,9 +1,6 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
-<<<<<<< HEAD
 import 'package:ara_smart_app/views/pay_biils/pay_bills.dart';
-=======
 import 'package:ara_smart_app/views/register_screens/if_exit.dart';
->>>>>>> 7771fac4c082c2fdbd03495c69f32ac3f56a04e2
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
