@@ -84,7 +84,9 @@ class Transfer_to_Account extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Back",
                           num: "3",
@@ -99,7 +101,9 @@ class Transfer_to_Account extends StatelessWidget {
                         width: 10,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Exit",
                           num: "4",
