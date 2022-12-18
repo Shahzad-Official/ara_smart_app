@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/transferrence_successfully.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class Otp3 extends StatelessWidget {
@@ -53,7 +55,9 @@ class Otp3 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const Transferrence_successful());
+                        },
                         child: CustomButton(
                             text: "Continue",
                             num: "1",
@@ -62,7 +66,9 @@ class Otp3 extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.33),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                             text: "Cancel",
                             num: "2",

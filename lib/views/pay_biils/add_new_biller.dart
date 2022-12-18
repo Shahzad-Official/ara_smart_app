@@ -112,7 +112,9 @@ class Add_new_biller extends StatelessWidget {
                         height: 8,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Cancel",
                           num: "2",

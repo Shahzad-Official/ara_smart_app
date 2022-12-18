@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/pay_biils/pay_bills.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Transferrence_successful extends StatelessWidget {
   const Transferrence_successful({Key? key}) : super(key: key);
@@ -33,7 +35,9 @@ class Transferrence_successful extends StatelessWidget {
                     height: 50,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Pay_bills());
+                    },
                     child: CustomButton(
                       text: "OK",
                       num: "1",

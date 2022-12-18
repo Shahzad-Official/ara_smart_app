@@ -66,7 +66,9 @@ class Otp_pay_bills extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.33),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                             text: "Cancel",
                             num: "2",

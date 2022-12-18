@@ -1,8 +1,10 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/search_account.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Beneficiary_successful extends StatelessWidget {
   const Beneficiary_successful({Key? key}) : super(key: key);
@@ -33,7 +35,9 @@ class Beneficiary_successful extends StatelessWidget {
                     height: 30,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Search_account());
+                    },
                     child: CustomButton(
                       text: "OK",
                       num: "1",

@@ -103,7 +103,9 @@ class Add_Beneficiary extends StatelessWidget {
                             height: 8,
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.back();
+                            },
                             child: CustomButton(
                               text: "No",
                               num: "2",

@@ -66,7 +66,9 @@ class Enter_password_otp extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.32),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                             text: "Cancel",
                             num: "2",

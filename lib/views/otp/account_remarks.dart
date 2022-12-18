@@ -1,4 +1,5 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
+import 'package:ara_smart_app/views/otp/otp3.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
 import 'package:ara_smart_app/widgets/background_screen.dart';
@@ -73,7 +74,9 @@ class Account_remarks extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const Otp3());
+                        },
                         child: CustomButton(
                           text: "Continue",
                           num: "1",
@@ -85,7 +88,9 @@ class Account_remarks extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.back();
+                        },
                         child: CustomButton(
                           text: "Cancel",
                           num: "2",

@@ -73,7 +73,9 @@ class Manage_registered_billers extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(const Account_pay_bill());
+                    },
                     child: CustomButton(
                       text: "Oneic Water",
                       num: "2",
