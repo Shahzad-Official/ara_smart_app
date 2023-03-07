@@ -47,6 +47,7 @@ dependencies:
   google_fonts: ^3.0.1
   #voice_commands
   speech_to_text: ^6.1.1
+  flutter_tts: ^3.6.3
   #permissions
   permission_handler: any
 

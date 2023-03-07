@@ -14,9 +14,10 @@ class SignUpController extends GetxController {
   List<Map<String, dynamic>> listOfUsers = [{}];
   UserData userData = UserData();
   UserModel userModel = UserModel();
+
   createNewUser() async {
     userModel = UserModel(
-      balance: int.parse(balance.text.trim()),
+      balance: (balance.text),
       cardNumber: cardNo.text.trim(),
       mobile: mobile.text.trim(),
       password: password.text.trim(),
@@ -35,6 +36,7 @@ class SignUpController extends GetxController {
     );
 
     listOfUsers = box.get("users");
+    print(listOfUsers);
 
     return listOfUsers;
   }

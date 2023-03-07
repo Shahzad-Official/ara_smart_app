@@ -3,7 +3,7 @@ class UserModel {
   String? password;
   String? mobile;
   String? cardNumber;
-  int? balance;
+  String? balance;
 
   UserModel(
       {this.userId, this.password, this.mobile, this.cardNumber, this.balance});

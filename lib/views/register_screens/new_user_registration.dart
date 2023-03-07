@@ -61,6 +61,7 @@ class NewUserRegistration extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.number,
                     controller: controller.mobile,
                   ),
                   const SizedBox(
@@ -86,6 +87,7 @@ class NewUserRegistration extends StatelessWidget {
                     height: 10,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.number,
                     controller: controller.cardNo,
                   ),
                   const SizedBox(
@@ -102,6 +104,7 @@ class NewUserRegistration extends StatelessWidget {
                     ],
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.number,
                     controller: controller.balance,
                   ),
                   const SizedBox(

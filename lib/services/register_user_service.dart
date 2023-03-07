@@ -8,7 +8,7 @@ class RegisterUserService {
   UserData userData = UserData();
 
   registerUser({
-    required int balance,
+    required String balance,
     required String cardNO,
     required String mobile,
     required String password,

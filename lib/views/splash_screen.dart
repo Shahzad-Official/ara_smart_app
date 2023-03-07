@@ -1,12 +1,34 @@
 import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/constants/svg_icons.dart';
+import 'package:ara_smart_app/database/user_data.dart';
 import 'package:ara_smart_app/views/welcome_home/first_welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hive/hive.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  UserData _userData = UserData();
+  initializeDB() async {
+    var box = await Hive.openBox('myBox');
+    box.put("users", _userData.registeredUsers);
+    var list = box.get("users");
+    print(list);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initializeDB();
+  }
 
   @override
   Widget build(BuildContext context) {

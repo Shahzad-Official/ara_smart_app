@@ -2,6 +2,7 @@ import 'package:ara_smart_app/constants/app_colors.dart';
 import 'package:ara_smart_app/views/knowing_balance/knowing_balance.dart';
 import 'package:ara_smart_app/views/pay_biils/pay_bills.dart';
 import 'package:ara_smart_app/views/register_screens/if_exit.dart';
+import 'package:ara_smart_app/views/register_screens/login_screen.dart';
 import 'package:ara_smart_app/views/transfer_balance/transfer_funds.dart';
 import 'package:ara_smart_app/widgets/app_button.dart';
 import 'package:ara_smart_app/widgets/app_text.dart';
@@ -11,11 +12,13 @@ import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   String name, accountNo, balance;
+  bool isLogin;
   WelcomeScreen({
     Key? key,
     required this.accountNo,
     required this.balance,
     required this.name,
+    this.isLogin = false,
   }) : super(key: key);
 
   @override
@@ -117,7 +120,11 @@ class WelcomeScreen extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.back();
+                          if (isLogin) {
+                            Get.offAll(() => LoginScreen());
+                          } else {
+                            Get.back();
+                          }
                         },
                         child: CustomButton(
                             text: "Back",
